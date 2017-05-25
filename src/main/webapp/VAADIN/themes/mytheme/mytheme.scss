@@ -1,0 +1,1174 @@
+// If you edit this file you need to compile the theme. See README.md for details.
+
+// Global variable overrides. Must be declared before importing Valo.
+
+// Defines the plaintext font size, weight and family. Font size affects general component sizing.
+//$v-font-size: 16px;
+//$v-font-weight: 300;
+//$v-font-family: "Open Sans", sans-serif;
+
+// Defines the border used by all components.
+//$v-border: 1px solid (v-shade 0.7);
+//$v-border-radius: 4px;
+
+// Affects the color of some component elements, e.g Button, Panel title, etc
+//$v-background-color: hsl(210, 0%, 98%);
+// Affects the color of content areas, e.g  Panel and Window content, TextField input etc
+//$v-app-background-color: $v-background-color;
+
+// Affects the visual appearance of all components
+//$v-gradient: v-linear 8%;
+//$v-bevel-depth: 30%;
+//$v-shadow-opacity: 5%;
+
+// Defines colors for indicating status (focus, success, failure)
+//$v-focus-color: valo-focus-color(); // Calculates a suitable color automatically
+//$v-friendly-color: #2c9720;
+//$v-error-indicator-color: #ed473b;
+
+// For more information, see: https://vaadin.com/book/-/page/themes.valo.html
+// Example variants can be copy/pasted from https://vaadin.com/wiki/-/wiki/Main/Valo+Examples
+
+//$v-focus-style: 0 0 1px 1px rgba($v-focus-color, .5);
+//$v-border-radius: 3px;
+//$v-textfield-border-radius: 0;
+//$v-font-size: 14px;
+//$v-font-weight: 400;
+//$v-bevel: inset 0 1px 0 v-tint;
+//$v-unit-size: 30px;
+//$v-selection-overlay-padding-horizontal: 0;
+//$v-selection-overlay-padding-vertical: 6px;
+//$v-selection-item-border-radius: 0;
+//$v-app-loading-text: "carregando...";
+//$v-background-color: hsl(0, 0, 99.5%);
+//$v-app-background-color: #fff;
+//$v-focus-color: hsl(218, 80%, 60%);
+//$v-textfield-bevel: false;
+//$v-shadow: false;
+//$valo-menu-background-color: hsl(218, 20%, 98%);
+//$v-friendly-color: hsl(163, 61%, 41%);
+//$v-error-indicator-color: hsl(349, 66%, 56%);
+
+@import "../valo/valo.scss";
+
+@mixin mytheme {
+  @include valo;
+
+  .my-label-red {
+    color: red;
+  }
+
+  .my-label-green {
+    color: green;
+  }
+
+  .my-label_red_large {
+    color: red;
+    font-size: 22px;
+  }
+
+  .my-label-green_large {
+    color: green;
+    font-size: 22px;
+  }
+
+  .my-label-notifications-red {
+    background: white;
+    color: #ed473b;
+    border: 2px solid #ed473b;
+    border-radius: 4px;
+    padding: 1px 10px 1px 10px;
+    font-weight: 400;
+    font-size: 15px;
+    text-align: left;
+  }
+
+  .my-app-shell {
+
+    // Navigation bar background color
+    $navigation-bar-bg-color: $v-focus-color;
+
+    .custom-menubar {
+      .v-menubar-menuitem {
+        position: relative;
+        :before {
+          content: "";
+          display: block;
+          position: absolute;
+          width: 100%;
+          height: 1px;
+          background: $v-focus-color;
+          bottom: -20px;
+          left: 0;
+        }
+      }
+    }
+
+    .my-inspect {
+      position: absolute;
+    }
+
+    .navigation-bar {
+      background: $navigation-bar-bg-color;
+      z-index: 10000;
+    }
+
+    .logo {
+      color: lighten($navigation-bar-bg-color, 40%);
+      text-align: center;
+      padding: $v-unit-size / 2 $v-unit-size / 4;
+      font-size: $v-font-size * 1.1;
+    }
+
+    .view-title {
+      font-weight: bold;
+      font-size: $v-font-size * 1.1;
+      color: lighten($v-font-color, 10%);
+      padding: $v-unit-size / 2 $v-unit-size / 3;
+    }
+
+    .padding {
+      padding: $v-unit-size / 3;
+    }
+
+    .padding-top {
+      padding-top: $v-unit-size / 3;
+    }
+
+    .padding-right {
+      padding-right: $v-unit-size / 3;
+    }
+
+    .padding-bottom {
+      padding-bottom: $v-unit-size / 3;
+    }
+
+    .padding-left {
+      padding-left: $v-unit-size / 3;
+    }
+
+    .content-section {
+      background: lighten($v-background-color, 20%);
+      border: valo-border($border: $v-border, $strength: 0.2);
+      font-size: $v-font-size * .9;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+
+    .menu {
+      float: right;
+      padding: 0 10px;
+      line-height: $v-unit-size;
+      color: lighten($navigation-bar-bg-color, 40%);
+      display: none;
+
+      .v-icon {
+        line-height: 1;
+        color: lighten($navigation-bar-bg-color, 60%);
+        font-size: 16px;
+      }
+    }
+
+    .navigation {
+      border-top: 1px solid lighten($navigation-bar-bg-color, 7%);
+      border-bottom: 1px solid lighten($navigation-bar-bg-color, 7%);
+      background: darken($navigation-bar-bg-color, 4%);
+
+      .v-icon {
+        color: lighten($navigation-bar-bg-color, 25%);
+      }
+
+      .v-button {
+        text-align: left;
+        font-size: $v-font-size * .9;
+        text-overflow: ellipsis;
+        color: lighten($navigation-bar-bg-color, 40%);
+
+        &.active, &:focus {
+          color: lighten($navigation-bar-bg-color, 70%);
+
+          .v-icon {
+            color: lighten($navigation-bar-bg-color, 45%);
+          }
+        }
+
+        // Removes the default focus border
+        &:focus:after {
+          content: none;
+        }
+
+        &.borderless:hover {
+          background: darken($navigation-bar-bg-color, 7%);
+        }
+      }
+    }
+
+    // Responsive styles
+    &[width-range~="601px-1000px"] {
+      .navigation-bar-container {
+        width: 80px !important;
+
+        .logo {
+          font-size: $v-font-size * .75;
+        }
+
+        .navigation .v-button {
+          font-size: 26px;
+          height: 60px;
+          padding: 10px 6px;
+          box-sizing: border-box;
+          line-height: 1;
+
+          &:before {
+            content: none;
+          }
+
+          .v-button-wrap {
+            width: 100%
+          }
+
+          .v-button-caption {
+            font-size: $v-font-size * 0.6;
+            margin: 0;
+            width: 100%;
+            float: left;
+            margin-top: 3px;
+            text-align: center;
+          }
+
+          .v-icon {
+            width: 100%;
+            float: left;
+            text-align: center;
+          }
+        }
+      }
+    }
+
+    &[width-range~="-600px"] {
+      .navigation-bar-container {
+        width: 0px !important;
+      }
+
+      .menu {
+        display: block;
+      }
+
+      .navigation {
+        display: none;
+      }
+
+      .navigation:hover, .navigation:active, .menu:focus + .navigation {
+        display: inline-block;
+      }
+
+      .navigation-bar {
+        position: fixed;
+        width: 100%;
+        height: $v-unit-size !important;
+      }
+
+      .logo {
+        line-height: $v-unit-size;
+        width: auto !important;
+        float: left;
+        padding: 0 $v-unit-size / 2.5;
+        font-size: $v-font-size;
+      }
+
+      .content-container {
+        padding-top: $v-unit-size;
+      }
+    }
+
+    .my-grid-template {
+      .top-bar {
+        background: white;
+        color: $v-focus-color;
+        padding: 0 $v-unit-size / 2;
+        border-bottom: valo-border($border: $v-border, $strength: 1.0);
+      }
+
+      .title {
+        font-size: $v-font-size * 1.2;
+        font-weight: 600;
+        padding-bottom: $v-unit-size / 10;
+      }
+
+      .sub-title {
+        font-size: $v-font-size;
+        font-weight: 600;
+        padding-bottom: $v-unit-size / 10;
+      }
+
+      .padding {
+        padding: $v-unit-size / 2;
+      }
+
+      .border {
+        border: valo-border($v-border)
+      }
+
+      .border-top {
+        border-top: valo-border($v-border)
+      }
+
+      .border-left {
+        border-left: valo-border($v-border)
+      }
+
+      .filters {
+        padding: $v-unit-size / 4;
+
+        .v-slot {
+          position: relative;
+        }
+      }
+
+      .content {
+        position: relative;
+      }
+
+      .list {
+        padding-right: 300px;
+      }
+
+      .inspect {
+        position: absolute;
+        right: 0;
+        top: 0;
+        background: darken($v-app-background-color, 5%);
+        width: 300px !important;
+        border-left: 4px solid darken($v-app-background-color, 10%);
+      }
+
+      .section {
+        padding: $v-unit-size / 4;
+      }
+
+      .edit {
+        padding: $v-unit-size / 4;
+        overflow-x: hidden;
+        overflow-y: auto;
+        border-left: 1px solid darken($v-app-background-color, 15%);
+        border-top: 1px solid darken($v-app-background-color, 15%);
+      }
+
+      .search {
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        border-bottom: 2px solid $v-focus-color;
+        border-radius: 0;
+        max-width: 350px;
+      }
+
+      .buttons {
+        background: $v-app-background-color;
+        padding: $v-unit-size / 4;
+        border-left: 1px solid darken($v-app-background-color, 15%);
+      }
+
+      &[width-range~="-850px"] {
+        .list {
+          height: 50% !important;
+          padding-right: 0;
+        }
+
+        .inspect {
+          position: static;
+          height: 50% !important;
+          width: 100% !important;
+          border-top: 4px solid darken($v-app-background-color, 10%);
+          border-left: none;
+        }
+
+        .section, .edit {
+          padding: $v-unit-size / 8;
+        }
+
+        .half {
+          width: 50% !important;
+          float: left;
+        }
+      }
+
+      &[width-range~="-650px"] {
+        .half {
+          width: 100% !important;
+        }
+      }
+    }
+
+    .my-form-template {
+      overflow-x: hidden;
+      overflow-y: scroll;
+      padding: $v-unit-size / 2;
+      min-width: 320px;
+
+      .title {
+        font-size: $v-font-size * 1.2;
+        font-weight: 600;
+        padding-bottom: $v-unit-size / 2;
+      }
+
+      .v-caption-form-section {
+        text-transform: uppercase;
+        font-size: $v-font-size * 0.8;
+        color: lighten($v-font-color, 20%);
+        font-weight: 600;
+        padding-bottom: 0;
+        width: 100%;
+      }
+
+      .input-wrapper {
+        padding: $v-unit-size / 4;
+        line-height: $v-unit-size;
+      }
+
+      .css-input-wrapper {
+        padding: $v-unit-size / 4;
+        line-height: $v-unit-size;
+      }
+
+      .input-group {
+        width: 100%;
+      }
+
+      .text-wrapper {
+        padding: $v-unit-size / 2;
+        background: lighten($v-app-background-color, 10%);
+      }
+
+      .form-section {
+        padding: $v-unit-size / 4 0 $v-unit-size;
+        width: 100%;
+        border-top: valo-border($v-border);
+      }
+
+      .input-wrapper .v-caption {
+        display: block;
+      }
+
+      .css-input-wrapper .v-caption {
+        display: block;
+      }
+
+      .v-button.borderless {
+        color: $v-focus-color;
+      }
+
+      .input-wrapper {
+        .v-widget + .v-widget {
+          margin-left: $v-unit-size / 2;
+        }
+      }
+
+      .align-bottom {
+        vertical-align: bottom;
+      }
+
+      .border {
+        border: valo-border($border: $v-border, $strength: 0.5);
+        margin: $v-unit-size / 4 0;
+      }
+
+      &[width-range~="-550px"] {
+        .input-wrapper {
+          width: 100%;
+        }
+
+        .css-input-wrapper {
+          width: 100%;
+        }
+      }
+
+      &[width-range~="551px-"] {
+
+        .caption-left .input-wrapper .v-caption {
+          display: inline-block;
+          height: $v-unit-size;
+          line-height: $v-unit-size;
+          padding-right: $v-unit-size / 6;
+          padding-bottom: 0;
+          vertical-align: top;
+        }
+
+        .caption-left .input-wrapper .v-caption.v-caption-tiny {
+          height: $v-unit-size--tiny;
+          line-height: $v-unit-size--tiny;
+        }
+
+        .caption-left .css-input-wrapper .v-caption.v-caption-tiny {
+          height: $v-unit-size--tiny;
+          line-height: $v-unit-size--tiny;
+        }
+
+        .caption-left .input-wrapper .v-caption.v-caption-small {
+          height: $v-unit-size--small;
+          line-height: $v-unit-size--small;
+        }
+
+        .caption-left .css-input-wrapper .v-caption.v-caption-small {
+          height: $v-unit-size--small;
+          line-height: $v-unit-size--small;
+        }
+
+        .caption-left .input-wrapper .v-caption.v-caption-large {
+          height: $v-unit-size--large;
+          line-height: $v-unit-size--large;
+        }
+
+        .caption-left .css-input-wrapper .v-caption.v-caption-large {
+          height: $v-unit-size--large;
+          line-height: $v-unit-size--large;
+        }
+
+        .caption-left .input-wrapper .v-caption.v-caption-huge {
+          height: $v-unit-size--huge;
+          line-height: $v-unit-size--huge;
+        }
+
+        .caption-left .css-input-wrapper .v-caption.v-caption-huge {
+          height: $v-unit-size--huge;
+          line-height: $v-unit-size--huge;
+        }
+      }
+
+      &[width-range~="551px-700px"] {
+
+        .input-wrapper {
+          width: 50%;
+        }
+
+        .css-input-wrapper {
+          width: 50%;
+        }
+
+        .caption-left .input-wrapper {
+          width: 100%;
+
+          > .v-widget {
+            width: 65% !important;
+            float: right;
+          }
+
+          > .v-caption {
+            text-align: right;
+            width: 35%;
+            box-sizing: border-box;
+          }
+        }
+
+        .caption-left .css-input-wrapper {
+          width: 100%;
+
+          > .v-widget {
+            width: 65% !important;
+            float: right;
+          }
+
+          > .v-caption {
+            text-align: right;
+            width: 35%;
+            box-sizing: border-box;
+          }
+        }
+      }
+
+      &[width-range~="-700px"] {
+
+        .title, .v-caption-form-section {
+          text-align: center;
+        }
+
+        .input-wrapper .v-datefield, .v-textfield, .v-filterselect, .v-textarea {
+          width: 100%;
+        }
+
+        .css-input-wrapper .v-datefield, .v-textfield, .v-filterselect, .v-textarea {
+          width: 100%;
+        }
+
+        .input-wrapper {
+          .v-widget + .v-widget {
+            margin-left: 0;
+            margin-top: $v-unit-size / 4;
+          }
+        }
+
+        .input-group {
+          margin-bottom: $v-unit-size / 2;
+        }
+
+        .v-captiontext {
+          text-overflow: ellipsis;
+          overflow: hidden;
+          width: 100%;
+        }
+
+        .my-label-notifications-red {
+          text-align: center;
+        }
+
+        .width-static {
+          width: 16%;
+        }
+
+        .width-dynamic {
+          width: 84%;
+        }
+
+        .my-width-static {
+          width: 16%;
+        }
+
+        .my-width-dynamic {
+          width: 84%;
+        }
+      }
+
+      &[width-range~="701px-850px"] {
+
+        .input-wrapper {
+          width: 50%;
+        }
+
+        .css-input-wrapper {
+          width: 50%;
+        }
+
+        .width-static {
+          width: 14%;
+        }
+
+        .width-dynamic {
+          width: 86%;
+        }
+
+        .my-width-static {
+          width: 50px;
+        }
+
+        .my-width-dynamic {
+          width: -1px;
+        }
+      }
+
+      &[width-range~="851px-1000px"] {
+
+        .input-wrapper {
+          width: 30%;
+        }
+
+        .css-input-wrapper {
+          width: 30%;
+        }
+
+        .my-input-wrapper {
+          width: 40%;
+        }
+
+        .my-css-input-wrapper {
+          width: 40%;
+        }
+
+        .width-static {
+          width: 14%;
+        }
+
+        .width-dynamic {
+          width: 86%;
+        }
+
+        .my-width-static {
+          width: 50px;
+        }
+
+        .my-width-dynamic {
+          width: -1px;
+        }
+      }
+
+      &[width-range~="1001px-"] {
+
+        .input-wrapper {
+          width: 25%;
+        }
+
+        .css-input-wrapper {
+          width: 25%;
+        }
+
+        .my-input-wrapper {
+          width: 35%;
+        }
+
+        .my-css-input-wrapper {
+          width: 35%;
+        }
+
+        .width-static {
+          width: 12%;
+        }
+
+        .width-dynamic {
+          width: 88%;
+        }
+
+        .my-width-static {
+          width: 50px;
+        }
+
+        .my-width-dynamic {
+          width: -1px;
+        }
+      }
+    }
+  }
+
+  .my-grid-template {
+    .top-bar {
+      background: white;
+      color: $v-focus-color;
+      padding: 0 $v-unit-size / 2;
+      border-bottom: valo-border($border: $v-border, $strength: 1.0);
+    }
+
+    .title {
+      font-size: $v-font-size * 1.2;
+      font-weight: 600;
+      padding-bottom: $v-unit-size / 10;
+    }
+
+    .sub-title {
+      font-size: $v-font-size;
+      font-weight: 600;
+      padding-bottom: $v-unit-size / 10;
+    }
+
+    .padding {
+      padding: $v-unit-size / 2;
+    }
+
+    .border {
+      border: valo-border($v-border)
+    }
+
+    .border-top {
+      border-top: valo-border($v-border)
+    }
+
+    .border-left {
+      border-left: valo-border($v-border)
+    }
+
+    .filters {
+      padding: $v-unit-size / 4;
+
+      .v-slot {
+        position: relative;
+      }
+    }
+
+    .content {
+      position: relative;
+    }
+
+    .list {
+      padding-right: 300px;
+    }
+
+    .inspect {
+      position: absolute;
+      right: 0;
+      top: 0;
+      background: darken($v-app-background-color, 5%);
+      width: 300px !important;
+      border-left: 4px solid darken($v-app-background-color, 10%);
+    }
+
+    .section {
+      padding: $v-unit-size / 4;
+    }
+
+    .edit {
+      padding: $v-unit-size / 4;
+      overflow-x: hidden;
+      overflow-y: auto;
+      border-left: 1px solid darken($v-app-background-color, 15%);
+      border-top: 1px solid darken($v-app-background-color, 15%);
+    }
+
+    .search {
+      background: transparent;
+      border: none;
+      box-shadow: none;
+      border-bottom: 2px solid $v-focus-color;
+      border-radius: 0;
+      max-width: 350px;
+    }
+
+    .buttons {
+      background: $v-app-background-color;
+      padding: $v-unit-size / 4;
+      border-left: 1px solid darken($v-app-background-color, 15%);
+    }
+
+    &[width-range~="-850px"] {
+      .list {
+        height: 50% !important;
+        padding-right: 0;
+      }
+
+      .inspect {
+        position: static;
+        height: 50% !important;
+        width: 100% !important;
+        border-top: 4px solid darken($v-app-background-color, 10%);
+        border-left: none;
+      }
+
+      .section, .edit {
+        padding: $v-unit-size / 8;
+      }
+
+      .half {
+        width: 50% !important;
+        float: left;
+      }
+    }
+
+    &[width-range~="-650px"] {
+      .half {
+        width: 100% !important;
+      }
+    }
+  }
+
+  .my-form-template {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding: $v-unit-size / 2;
+    min-width: 320px;
+
+    .title {
+      font-size: $v-font-size * 1.2;
+      font-weight: 600;
+      padding-bottom: $v-unit-size / 2;
+    }
+
+    .v-caption-form-section {
+      text-transform: uppercase;
+      font-size: $v-font-size * 0.8;
+      color: lighten($v-font-color, 20%);
+      font-weight: 600;
+      padding-bottom: 0;
+      width: 100%;
+    }
+
+    .input-wrapper {
+      padding: $v-unit-size / 4;
+      line-height: $v-unit-size;
+    }
+
+    .css-input-wrapper {
+      padding: $v-unit-size / 4;
+      line-height: $v-unit-size;
+    }
+
+    .input-group {
+      width: 100%;
+    }
+
+    .text-wrapper {
+      padding: $v-unit-size / 2;
+      background: lighten($v-app-background-color, 10%);
+    }
+
+    .form-section {
+      padding: $v-unit-size / 4 0 $v-unit-size;
+      width: 100%;
+      border-top: valo-border($v-border);
+    }
+
+    .input-wrapper .v-caption {
+      display: block;
+    }
+
+    .css-input-wrapper .v-caption {
+      display: block;
+    }
+
+    .v-button.borderless {
+      color: $v-focus-color;
+    }
+
+    .input-wrapper {
+      .v-widget + .v-widget {
+        margin-left: $v-unit-size / 2;
+      }
+    }
+
+    .align-bottom {
+      vertical-align: bottom;
+    }
+
+    .border {
+      border: valo-border($border: $v-border, $strength: 0.5);
+      margin: $v-unit-size / 4 0;
+    }
+
+    &[width-range~="-550px"] {
+      .input-wrapper {
+        width: 100%;
+      }
+
+      .css-input-wrapper {
+        width: 100%;
+      }
+    }
+
+    &[width-range~="551px-"] {
+
+      .caption-left .input-wrapper .v-caption {
+        display: inline-block;
+        height: $v-unit-size;
+        line-height: $v-unit-size;
+        padding-right: $v-unit-size / 6;
+        padding-bottom: 0;
+        vertical-align: top;
+      }
+
+      .caption-left .input-wrapper .v-caption.v-caption-tiny {
+        height: $v-unit-size--tiny;
+        line-height: $v-unit-size--tiny;
+      }
+
+      .caption-left .css-input-wrapper .v-caption.v-caption-tiny {
+        height: $v-unit-size--tiny;
+        line-height: $v-unit-size--tiny;
+      }
+
+      .caption-left .input-wrapper .v-caption.v-caption-small {
+        height: $v-unit-size--small;
+        line-height: $v-unit-size--small;
+      }
+
+      .caption-left .css-input-wrapper .v-caption.v-caption-small {
+        height: $v-unit-size--small;
+        line-height: $v-unit-size--small;
+      }
+
+      .caption-left .input-wrapper .v-caption.v-caption-large {
+        height: $v-unit-size--large;
+        line-height: $v-unit-size--large;
+      }
+
+      .caption-left .css-input-wrapper .v-caption.v-caption-large {
+        height: $v-unit-size--large;
+        line-height: $v-unit-size--large;
+      }
+
+      .caption-left .input-wrapper .v-caption.v-caption-huge {
+        height: $v-unit-size--huge;
+        line-height: $v-unit-size--huge;
+      }
+
+      .caption-left .css-input-wrapper .v-caption.v-caption-huge {
+        height: $v-unit-size--huge;
+        line-height: $v-unit-size--huge;
+      }
+    }
+
+    &[width-range~="551px-700px"] {
+
+      .input-wrapper {
+        width: 50%;
+      }
+
+      .css-input-wrapper {
+        width: 50%;
+      }
+
+      .caption-left .input-wrapper {
+        width: 100%;
+
+        > .v-widget {
+          width: 65% !important;
+          float: right;
+        }
+
+        > .v-caption {
+          text-align: right;
+          width: 35%;
+          box-sizing: border-box;
+        }
+      }
+
+      .caption-left .css-input-wrapper {
+        width: 100%;
+
+        > .v-widget {
+          width: 65% !important;
+          float: right;
+        }
+
+        > .v-caption {
+          text-align: right;
+          width: 35%;
+          box-sizing: border-box;
+        }
+      }
+    }
+
+    &[width-range~="-700px"] {
+
+      .title, .v-caption-form-section {
+        text-align: center;
+      }
+
+      .input-wrapper .v-datefield, .v-textfield, .v-filterselect, .v-textarea {
+        width: 100%;
+      }
+
+      .css-input-wrapper .v-datefield, .v-textfield, .v-filterselect, .v-textarea {
+        width: 100%;
+      }
+
+      .input-wrapper {
+        .v-widget + .v-widget {
+          margin-left: 0;
+          margin-top: $v-unit-size / 4;
+        }
+      }
+
+      .input-group {
+        margin-bottom: $v-unit-size / 2;
+      }
+
+      .v-captiontext {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        width: 100%;
+      }
+
+      .my-label-notifications-red {
+        text-align: center;
+      }
+
+      .width-static {
+        width: 16%;
+      }
+
+      .width-dynamic {
+        width: 84%;
+      }
+
+      .my-width-static {
+        width: 16%;
+      }
+
+      .my-width-dynamic {
+        width: 84%;
+      }
+    }
+
+    &[width-range~="701px-850px"] {
+
+      .input-wrapper {
+        width: 50%;
+      }
+
+      .css-input-wrapper {
+        width: 50%;
+      }
+
+      .width-static {
+        width: 14%;
+      }
+
+      .width-dynamic {
+        width: 86%;
+      }
+
+      .my-width-static {
+        width: 50px;
+      }
+
+      .my-width-dynamic {
+        width: -1px;
+      }
+    }
+
+    &[width-range~="851px-1000px"] {
+
+      .input-wrapper {
+        width: 30%;
+      }
+
+      .css-input-wrapper {
+        width: 30%;
+      }
+
+      .my-input-wrapper {
+        width: 40%;
+      }
+
+      .my-css-input-wrapper {
+        width: 40%;
+      }
+
+      .width-static {
+        width: 14%;
+      }
+
+      .width-dynamic {
+        width: 86%;
+      }
+
+      .my-width-static {
+        width: 50px;
+      }
+
+      .my-width-dynamic {
+        width: -1px;
+      }
+    }
+
+    &[width-range~="1001px-"] {
+
+      .input-wrapper {
+        width: 25%;
+      }
+
+      .css-input-wrapper {
+        width: 25%;
+      }
+
+      .my-input-wrapper {
+        width: 35%;
+      }
+
+      .my-css-input-wrapper {
+        width: 35%;
+      }
+
+      .width-static {
+        width: 12%;
+      }
+
+      .width-dynamic {
+        width: 88%;
+      }
+
+      .my-width-static {
+        width: 50px;
+      }
+
+      .my-width-dynamic {
+        width: -1px;
+      }
+    }
+  }
+}
