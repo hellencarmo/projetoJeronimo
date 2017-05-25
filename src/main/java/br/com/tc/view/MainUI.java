@@ -9,6 +9,8 @@ import com.vaadin.ui.*;
 import javax.servlet.annotation.WebServlet;
 
 /**
+ * @author Jeronimo
+ * @since 25/05/2017
  * This UI is the application entry point. A UI may either represent a browser window 
  * (or tab) or some part of a html page where a Vaadin application is embedded.
  * <p>
@@ -17,7 +19,12 @@ import javax.servlet.annotation.WebServlet;
  */
 @Theme("mytheme")
 public class MainUI extends UI {
-
+    
+    /**
+     * @author Jeronimo
+     * @since 25/05/2017
+     * @param vaadinRequest
+     */
     @Override
     protected void init(VaadinRequest vaadinRequest) {
         final VerticalLayout layout = new VerticalLayout();
@@ -35,7 +42,12 @@ public class MainUI extends UI {
         
         setContent(layout);
     }
-
+    
+    /**
+     * @author Jeronimo
+     * @since 25/05/2017
+     * Servlet
+     */
     @WebServlet(urlPatterns = "/*", name = "MainUIServlet", asyncSupported = true)
     @VaadinServletConfiguration(ui = MainUI.class, productionMode = false)
     public static class MyUIServlet extends VaadinServlet {}
