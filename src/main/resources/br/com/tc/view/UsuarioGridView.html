@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;mytheme&quot;}">
+  <meta name="vaadin-version" content="8.0.5">
+ </head>
+ <body>
+  <vaadin-vertical-layout style-name="my-grid-template" spacing="false" responsive size-full margin="false">
+   <vaadin-horizontal-layout style-name="top-bar" spacing="false" width-full height="50px">
+    <vaadin-horizontal-layout spacing="false" width-full :middle :expand>
+     <vaadin-text-field caption-as-html icon="fonticon://Vaadin-Icons/e805" style-name="small inline-icon search" placeholder="Pesquisar" width-full _id="search"></vaadin-text-field>
+    </vaadin-horizontal-layout>
+    <vaadin-button icon="fonticon://Vaadin-Icons/e801" style-name="borderless" _id="add" :middle :right>
+      Adicionar 
+    </vaadin-button>
+   </vaadin-horizontal-layout>
+   <vaadin-css-layout style-name="content" size-full :expand>
+    <vaadin-css-layout style-name="list" size-full>
+     <vaadin-grid caption-as-html column-reordering-allowed size-full data-item-type="br.com.tc.model.Usuario" _id="list">
+      <table>
+       <colgroup>
+        <col column-id="id_usuario" sortable>
+        <col column-id="nome_usuario" sortable>
+        <col column-id="inserted" sortable>
+        <col column-id="changed" sortable>
+       </colgroup>
+       <thead>
+        <tr default>
+         <th plain-text column-ids="id_usuario">ID</th>
+         <th plain-text column-ids="nome_usuario">Usuário</th>
+         <th plain-text column-ids="inserted">Criado</th>
+         <th plain-text column-ids="changed">Alterado</th>
+        </tr>
+       </thead>
+       <tbody></tbody>
+      </table>
+     </vaadin-grid>
+    </vaadin-css-layout>
+    <vaadin-vertical-layout style-name="inspect" spacing="false" size-full margin="false">
+     <vaadin-label plain-text _id="action_title" :middle :center>
+       Adicionar 
+     </vaadin-label>
+     <vaadin-css-layout style-name="edit" size-full :expand>
+      <vaadin-css-layout style-name="section half" width-full>
+       <vaadin-text-field caption-as-html required-indicator-visible caption="Nome do Usuário" style-name="small" width-full _id="nome_usuario"></vaadin-text-field>
+      </vaadin-css-layout>
+      <vaadin-css-layout caption-as-html style-name="section half" width-full>
+       <vaadin-password-field caption-as-html caption="Senha" style-name="small" width-full _id="senha"></vaadin-password-field>
+      </vaadin-css-layout>
+      <vaadin-css-layout caption-as-html style-name="section half" width-full>
+       <vaadin-check-box caption="Cliente visualizar" _id="cliente_visualizar"></vaadin-check-box>
+      </vaadin-css-layout>
+      <vaadin-css-layout caption-as-html style-name="section half" width-full>
+       <vaadin-check-box caption="Cliente gravar" _id="cliente_gravar"></vaadin-check-box>
+      </vaadin-css-layout>
+      <vaadin-css-layout caption-as-html style-name="section half" width-full>
+       <vaadin-check-box caption="Cliente excluir" _id="cliente_excluir"></vaadin-check-box>
+      </vaadin-css-layout>
+      <vaadin-css-layout caption-as-html style-name="section half" width-full>
+       <vaadin-check-box caption="Contrato visualizar" _id="contrato_visualizar"></vaadin-check-box>
+      </vaadin-css-layout>
+      <vaadin-css-layout caption-as-html style-name="section half" width-full>
+       <vaadin-check-box caption="Contrato gravar" _id="contrato_gravar"></vaadin-check-box>
+      </vaadin-css-layout>
+      <vaadin-css-layout caption-as-html style-name="section half" width-full>
+       <vaadin-check-box caption="Contrato excluir" _id="contrato_excluir"></vaadin-check-box>
+      </vaadin-css-layout>
+      <vaadin-css-layout caption-as-html style-name="section half" width-full>
+       <vaadin-check-box caption="Financeira visualizar" _id="financeira_visualizar"></vaadin-check-box>
+      </vaadin-css-layout>
+      <vaadin-css-layout caption-as-html style-name="section half" width-full>
+       <vaadin-check-box caption="Financeira gravar" _id="financeira_gravar"></vaadin-check-box>
+      </vaadin-css-layout>
+      <vaadin-css-layout caption-as-html style-name="section half" width-full>
+       <vaadin-check-box caption="Financeira excluir" _id="financeira_excluir"></vaadin-check-box>
+      </vaadin-css-layout>
+      <vaadin-css-layout caption-as-html style-name="section half" width-full>
+       <vaadin-check-box caption="Caixa visualizar" _id="caixa_visualizar"></vaadin-check-box>
+      </vaadin-css-layout>
+      <vaadin-css-layout caption-as-html style-name="section half" width-full>
+       <vaadin-check-box caption="Caixa gravar" _id="caixa_gravar"></vaadin-check-box>
+      </vaadin-css-layout>
+      <vaadin-css-layout caption-as-html style-name="section half" width-full>
+       <vaadin-check-box caption="Caixa excluir" _id="caixa_excluir"></vaadin-check-box>
+      </vaadin-css-layout>
+      <vaadin-css-layout caption-as-html style-name="section half" width-full>
+       <vaadin-check-box caption="Relatório" _id="relatorio"></vaadin-check-box>
+      </vaadin-css-layout>
+      <vaadin-css-layout caption-as-html style-name="section half" width-full>
+       <vaadin-check-box caption="Comissão" _id="comissao"></vaadin-check-box>
+      </vaadin-css-layout>
+     </vaadin-css-layout>
+     <vaadin-horizontal-layout style-name="buttons border-top" width-full height="50px" :middle :center>
+      <vaadin-button icon="fonticon://FontAwesome/f0c7" style-name="small primary" width="90px" plain-text _id="save" :middle :right>
+        Salvar 
+      </vaadin-button>
+      <vaadin-button icon="fonticon://FontAwesome/f00d" style-name="small danger" width="90px" plain-text _id="delete" :middle>
+        Apagar 
+      </vaadin-button>
+     </vaadin-horizontal-layout>
+    </vaadin-vertical-layout>
+   </vaadin-css-layout>
+  </vaadin-vertical-layout>
+ </body>
+</html>

@@ -1531,6 +1531,107 @@ div.v-layout.v-horizontal.v-widget {
 	vertical-align: top;
 }
 
+.mytheme .crud-template .top-bar {
+	background: white;
+	color: #197de1;
+	padding: 0 18.5px;
+	border-bottom: 1px solid #c5c5c5;
+}
+
+.mytheme .crud-template .padding {
+	padding: 18.5px;
+}
+
+.mytheme .crud-template .border {
+	border: 1px solid #c5c5c5;
+}
+
+.mytheme .crud-template .border-top {
+	border-top: 1px solid #c5c5c5;
+}
+
+.mytheme .crud-template .border-left {
+	border-left: 1px solid #c5c5c5;
+}
+
+.mytheme .crud-template .filters {
+	padding: 9.25px;
+}
+
+.mytheme .crud-template .filters .v-slot {
+	position: relative;
+}
+
+.mytheme .crud-template .content {
+	position: relative;
+}
+
+.mytheme .crud-template .list {
+	padding-right: 300px;
+}
+
+.mytheme .crud-template .inspect {
+	position: absolute;
+	right: 0;
+	top: 0;
+	background: #ededed;
+	width: 300px !important;
+	border-left: 4px solid #e0e0e0;
+}
+
+.mytheme .crud-template .section {
+	padding: 9.25px;
+}
+
+.mytheme .crud-template .edit {
+	padding: 9.25px;
+	overflow-x: hidden;
+	overflow-y: auto;
+	border-left: 1px solid #d4d4d4;
+	border-top: 1px solid #d4d4d4;
+}
+
+.mytheme .crud-template .search {
+	background: transparent;
+	border: none;
+	box-shadow: none;
+	border-bottom: 2px solid #197de1;
+	border-radius: 0;
+	max-width: 350px;
+}
+
+.mytheme .crud-template .buttons {
+	background: #fafafa;
+	padding: 9.25px;
+	border-left: 1px solid #d4d4d4;
+}
+
+.mytheme .crud-template[width-range~="-850px"] .list {
+	height: 50% !important;
+	padding-right: 0;
+}
+
+.mytheme .crud-template[width-range~="-850px"] .inspect {
+	position: static;
+	height: 50% !important;
+	width: 100% !important;
+	border-top: 4px solid #e0e0e0;
+	border-left: none;
+}
+
+.mytheme .crud-template[width-range~="-850px"] .section, .mytheme .crud-template[width-range~="-850px"] .edit {
+	padding: 4.625px;
+}
+
+.mytheme .crud-template[width-range~="-850px"] .half {
+	width: 50% !important;
+	float: left;
+}
+
+.mytheme .crud-template[width-range~="-650px"] .half {
+	width: 100% !important;
+}
+
 .mytheme .app-shell .custom-menubar .v-menubar-menuitem {
 	position: relative;
 }
@@ -12681,4 +12782,1049 @@ div.v-layout.v-horizontal.v-widget {
 	display: inline-block;
 	width: 19px;
 	overflow: hidden;
+}
+
+.mytheme .my-label-red {
+	color: red;
+}
+
+.mytheme .my-label-green {
+	color: green;
+}
+
+.mytheme .my-label_red_large {
+	color: red;
+	font-size: 22px;
+}
+
+.mytheme .my-label-green_large {
+	color: green;
+	font-size: 22px;
+}
+
+.mytheme .my-label-notifications-red {
+	background: white;
+	color: #ed473b;
+	border: 2px solid #ed473b;
+	border-radius: 4px;
+	padding: 1px 10px 1px 10px;
+	font-weight: 400;
+	font-size: 15px;
+	text-align: left;
+}
+
+.mytheme .my-app-shell .custom-menubar .v-menubar-menuitem {
+	position: relative;
+}
+
+.mytheme .my-app-shell .custom-menubar .v-menubar-menuitem :before {
+	content: "";
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 1px;
+	background: #197de1;
+	bottom: -20px;
+	left: 0;
+}
+
+.mytheme .my-app-shell .my-inspect {
+	position: absolute;
+}
+
+.mytheme .my-app-shell .navigation-bar {
+	background: #197de1;
+	z-index: 10000;
+}
+
+.mytheme .my-app-shell .logo {
+	color: #cde3f9;
+	text-align: center;
+	padding: 18.5px 9.25px;
+	font-size: 17.6px;
+}
+
+.mytheme .my-app-shell .view-title {
+	font-weight: bold;
+	font-size: 17.6px;
+	color: #5f5f5f;
+	padding: 18.5px 12.33333px;
+}
+
+.mytheme .my-app-shell .padding {
+	padding: 12.33333px;
+}
+
+.mytheme .my-app-shell .padding-top {
+	padding-top: 12.33333px;
+}
+
+.mytheme .my-app-shell .padding-right {
+	padding-right: 12.33333px;
+}
+
+.mytheme .my-app-shell .padding-bottom {
+	padding-bottom: 12.33333px;
+}
+
+.mytheme .my-app-shell .padding-left {
+	padding-left: 12.33333px;
+}
+
+.mytheme .my-app-shell .content-section {
+	background: white;
+	border: 1px solid #efefef;
+	font-size: 14.4px;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.mytheme .my-app-shell .menu {
+	float: right;
+	padding: 0 10px;
+	line-height: 37px;
+	color: #cde3f9;
+	display: none;
+}
+
+.mytheme .my-app-shell .menu .v-icon {
+	line-height: 1;
+	color: white;
+	font-size: 16px;
+}
+
+.mytheme .my-app-shell .navigation {
+	border-top: 1px solid #358fe9;
+	border-bottom: 1px solid #358fe9;
+	background: #1773cf;
+}
+
+.mytheme .my-app-shell .navigation .v-icon {
+	color: #88bdf2;
+}
+
+.mytheme .my-app-shell .navigation .v-button {
+	text-align: left;
+	font-size: 14.4px;
+	text-overflow: ellipsis;
+	color: #cde3f9;
+}
+
+.mytheme .my-app-shell .navigation .v-button.active, .mytheme .my-app-shell .navigation .v-button:focus {
+	color: white;
+}
+
+.mytheme .my-app-shell .navigation .v-button.active .v-icon, .mytheme .my-app-shell .navigation .v-button:focus .v-icon {
+	color: #e3f0fc;
+}
+
+.mytheme .my-app-shell .navigation .v-button:focus:after {
+	content: none;
+}
+
+.mytheme .my-app-shell .navigation .v-button.borderless:hover {
+	background: #156bc1;
+}
+
+.mytheme .my-app-shell[width-range~="601px-1000px"] .navigation-bar-container {
+	width: 80px !important;
+}
+
+.mytheme .my-app-shell[width-range~="601px-1000px"] .navigation-bar-container .logo {
+	font-size: 12px;
+}
+
+.mytheme .my-app-shell[width-range~="601px-1000px"] .navigation-bar-container .navigation .v-button {
+	font-size: 26px;
+	height: 60px;
+	padding: 10px 6px;
+	box-sizing: border-box;
+	line-height: 1;
+}
+
+.mytheme .my-app-shell[width-range~="601px-1000px"] .navigation-bar-container .navigation .v-button:before {
+	content: none;
+}
+
+.mytheme .my-app-shell[width-range~="601px-1000px"] .navigation-bar-container .navigation .v-button .v-button-wrap {
+	width: 100%;
+}
+
+.mytheme .my-app-shell[width-range~="601px-1000px"] .navigation-bar-container .navigation .v-button .v-button-caption {
+	font-size: 9.6px;
+	margin: 0;
+	width: 100%;
+	float: left;
+	margin-top: 3px;
+	text-align: center;
+}
+
+.mytheme .my-app-shell[width-range~="601px-1000px"] .navigation-bar-container .navigation .v-button .v-icon {
+	width: 100%;
+	float: left;
+	text-align: center;
+}
+
+.mytheme .my-app-shell[width-range~="-600px"] .navigation-bar-container {
+	width: 0px !important;
+}
+
+.mytheme .my-app-shell[width-range~="-600px"] .menu {
+	display: block;
+}
+
+.mytheme .my-app-shell[width-range~="-600px"] .navigation {
+	display: none;
+}
+
+.mytheme .my-app-shell[width-range~="-600px"] .navigation:hover, .mytheme .my-app-shell[width-range~="-600px"] .navigation:active, .mytheme .my-app-shell[width-range~="-600px"] .menu:focus + .navigation {
+	display: inline-block;
+}
+
+.mytheme .my-app-shell[width-range~="-600px"] .navigation-bar {
+	position: fixed;
+	width: 100%;
+	height: 37px !important;
+}
+
+.mytheme .my-app-shell[width-range~="-600px"] .logo {
+	line-height: 37px;
+	width: auto !important;
+	float: left;
+	padding: 0 14.8px;
+	font-size: 16px;
+}
+
+.mytheme .my-app-shell[width-range~="-600px"] .content-container {
+	padding-top: 37px;
+}
+
+.mytheme .my-app-shell .my-grid-template .top-bar {
+	background: white;
+	color: #197de1;
+	padding: 0 18.5px;
+	border-bottom: 1px solid #c5c5c5;
+}
+
+.mytheme .my-app-shell .my-grid-template .title {
+	font-size: 19.2px;
+	font-weight: 600;
+	padding-bottom: 3.7px;
+}
+
+.mytheme .my-app-shell .my-grid-template .sub-title {
+	font-size: 16px;
+	font-weight: 600;
+	padding-bottom: 3.7px;
+}
+
+.mytheme .my-app-shell .my-grid-template .padding {
+	padding: 18.5px;
+}
+
+.mytheme .my-app-shell .my-grid-template .border {
+	border: 1px solid #c5c5c5;
+}
+
+.mytheme .my-app-shell .my-grid-template .border-top {
+	border-top: 1px solid #c5c5c5;
+}
+
+.mytheme .my-app-shell .my-grid-template .border-left {
+	border-left: 1px solid #c5c5c5;
+}
+
+.mytheme .my-app-shell .my-grid-template .filters {
+	padding: 9.25px;
+}
+
+.mytheme .my-app-shell .my-grid-template .filters .v-slot {
+	position: relative;
+}
+
+.mytheme .my-app-shell .my-grid-template .content {
+	position: relative;
+}
+
+.mytheme .my-app-shell .my-grid-template .list {
+	padding-right: 300px;
+}
+
+.mytheme .my-app-shell .my-grid-template .inspect {
+	position: absolute;
+	right: 0;
+	top: 0;
+	background: #ededed;
+	width: 300px !important;
+	border-left: 4px solid #e0e0e0;
+}
+
+.mytheme .my-app-shell .my-grid-template .section {
+	padding: 9.25px;
+}
+
+.mytheme .my-app-shell .my-grid-template .edit {
+	padding: 9.25px;
+	overflow-x: hidden;
+	overflow-y: auto;
+	border-left: 1px solid #d4d4d4;
+	border-top: 1px solid #d4d4d4;
+}
+
+.mytheme .my-app-shell .my-grid-template .search {
+	background: transparent;
+	border: none;
+	box-shadow: none;
+	border-bottom: 2px solid #197de1;
+	border-radius: 0;
+	max-width: 350px;
+}
+
+.mytheme .my-app-shell .my-grid-template .buttons {
+	background: #fafafa;
+	padding: 9.25px;
+	border-left: 1px solid #d4d4d4;
+}
+
+.mytheme .my-app-shell .my-grid-template[width-range~="-850px"] .list {
+	height: 50% !important;
+	padding-right: 0;
+}
+
+.mytheme .my-app-shell .my-grid-template[width-range~="-850px"] .inspect {
+	position: static;
+	height: 50% !important;
+	width: 100% !important;
+	border-top: 4px solid #e0e0e0;
+	border-left: none;
+}
+
+.mytheme .my-app-shell .my-grid-template[width-range~="-850px"] .section, .mytheme .my-app-shell .my-grid-template[width-range~="-850px"] .edit {
+	padding: 4.625px;
+}
+
+.mytheme .my-app-shell .my-grid-template[width-range~="-850px"] .half {
+	width: 50% !important;
+	float: left;
+}
+
+.mytheme .my-app-shell .my-grid-template[width-range~="-650px"] .half {
+	width: 100% !important;
+}
+
+.mytheme .my-app-shell .my-form-template {
+	overflow-x: hidden;
+	overflow-y: scroll;
+	padding: 18.5px;
+	min-width: 320px;
+}
+
+.mytheme .my-app-shell .my-form-template .title {
+	font-size: 19.2px;
+	font-weight: 600;
+	padding-bottom: 18.5px;
+}
+
+.mytheme .my-app-shell .my-form-template .v-caption-form-section {
+	text-transform: uppercase;
+	font-size: 12.8px;
+	color: #797979;
+	font-weight: 600;
+	padding-bottom: 0;
+	width: 100%;
+}
+
+.mytheme .my-app-shell .my-form-template .input-wrapper {
+	padding: 9.25px;
+	line-height: 37px;
+}
+
+.mytheme .my-app-shell .my-form-template .css-input-wrapper {
+	padding: 9.25px;
+	line-height: 37px;
+}
+
+.mytheme .my-app-shell .my-form-template .input-group {
+	width: 100%;
+}
+
+.mytheme .my-app-shell .my-form-template .text-wrapper {
+	padding: 18.5px;
+	background: white;
+}
+
+.mytheme .my-app-shell .my-form-template .form-section {
+	padding: 9.25px 0 37px;
+	width: 100%;
+	border-top: 1px solid #c5c5c5;
+}
+
+.mytheme .my-app-shell .my-form-template .input-wrapper .v-caption {
+	display: block;
+}
+
+.mytheme .my-app-shell .my-form-template .css-input-wrapper .v-caption {
+	display: block;
+}
+
+.mytheme .my-app-shell .my-form-template .v-button.borderless {
+	color: #197de1;
+}
+
+.mytheme .my-app-shell .my-form-template .input-wrapper .v-widget + .v-widget {
+	margin-left: 18.5px;
+}
+
+.mytheme .my-app-shell .my-form-template .align-bottom {
+	vertical-align: bottom;
+}
+
+.mytheme .my-app-shell .my-form-template .border {
+	border: 1px solid #dfdfdf;
+	margin: 9.25px 0;
+}
+
+.mytheme .my-app-shell .my-form-template[width-range~="-550px"] .input-wrapper {
+	width: 100%;
+}
+
+.mytheme .my-app-shell .my-form-template[width-range~="-550px"] .css-input-wrapper {
+	width: 100%;
+}
+
+.mytheme .my-app-shell .my-form-template[width-range~="551px-"] .caption-left .input-wrapper .v-caption {
+	display: inline-block;
+	height: 37px;
+	line-height: 37px;
+	padding-right: 6.16667px;
+	padding-bottom: 0;
+	vertical-align: top;
+}
+
+.mytheme .my-app-shell .my-form-template[width-range~="551px-"] .caption-left .input-wrapper .v-caption.v-caption-tiny {
+	height: 28px;
+	line-height: 28px;
+}
+
+.mytheme .my-app-shell .my-form-template[width-range~="551px-"] .caption-left .css-input-wrapper .v-caption.v-caption-tiny {
+	height: 28px;
+	line-height: 28px;
+}
+
+.mytheme .my-app-shell .my-form-template[width-range~="551px-"] .caption-left .input-wrapper .v-caption.v-caption-small {
+	height: 31px;
+	line-height: 31px;
+}
+
+.mytheme .my-app-shell .my-form-template[width-range~="551px-"] .caption-left .css-input-wrapper .v-caption.v-caption-small {
+	height: 31px;
+	line-height: 31px;
+}
+
+.mytheme .my-app-shell .my-form-template[width-range~="551px-"] .caption-left .input-wrapper .v-caption.v-caption-large {
+	height: 44px;
+	line-height: 44px;
+}
+
+.mytheme .my-app-shell .my-form-template[width-range~="551px-"] .caption-left .css-input-wrapper .v-caption.v-caption-large {
+	height: 44px;
+	line-height: 44px;
+}
+
+.mytheme .my-app-shell .my-form-template[width-range~="551px-"] .caption-left .input-wrapper .v-caption.v-caption-huge {
+	height: 59px;
+	line-height: 59px;
+}
+
+.mytheme .my-app-shell .my-form-template[width-range~="551px-"] .caption-left .css-input-wrapper .v-caption.v-caption-huge {
+	height: 59px;
+	line-height: 59px;
+}
+
+.mytheme .my-app-shell .my-form-template[width-range~="551px-700px"] .input-wrapper {
+	width: 50%;
+}
+
+.mytheme .my-app-shell .my-form-template[width-range~="551px-700px"] .css-input-wrapper {
+	width: 50%;
+}
+
+.mytheme .my-app-shell .my-form-template[width-range~="551px-700px"] .caption-left .input-wrapper {
+	width: 100%;
+}
+
+.mytheme .my-app-shell .my-form-template[width-range~="551px-700px"] .caption-left .input-wrapper  > .v-widget {
+	width: 65% !important;
+	float: right;
+}
+
+.mytheme .my-app-shell .my-form-template[width-range~="551px-700px"] .caption-left .input-wrapper  > .v-caption {
+	text-align: right;
+	width: 35%;
+	box-sizing: border-box;
+}
+
+.mytheme .my-app-shell .my-form-template[width-range~="551px-700px"] .caption-left .css-input-wrapper {
+	width: 100%;
+}
+
+.mytheme .my-app-shell .my-form-template[width-range~="551px-700px"] .caption-left .css-input-wrapper  > .v-widget {
+	width: 65% !important;
+	float: right;
+}
+
+.mytheme .my-app-shell .my-form-template[width-range~="551px-700px"] .caption-left .css-input-wrapper  > .v-caption {
+	text-align: right;
+	width: 35%;
+	box-sizing: border-box;
+}
+
+.mytheme .my-app-shell .my-form-template[width-range~="-700px"] .title, .mytheme .my-app-shell .my-form-template[width-range~="-700px"] .v-caption-form-section {
+	text-align: center;
+}
+
+.mytheme .my-app-shell .my-form-template[width-range~="-700px"] .input-wrapper .v-datefield, .mytheme .my-app-shell .my-form-template[width-range~="-700px"] .v-textfield, .mytheme .my-app-shell .my-form-template[width-range~="-700px"] .v-filterselect, .mytheme .my-app-shell .my-form-template[width-range~="-700px"] .v-textarea {
+	width: 100%;
+}
+
+.mytheme .my-app-shell .my-form-template[width-range~="-700px"] .css-input-wrapper .v-datefield, .mytheme .my-app-shell .my-form-template[width-range~="-700px"] .v-textfield, .mytheme .my-app-shell .my-form-template[width-range~="-700px"] .v-filterselect, .mytheme .my-app-shell .my-form-template[width-range~="-700px"] .v-textarea {
+	width: 100%;
+}
+
+.mytheme .my-app-shell .my-form-template[width-range~="-700px"] .input-wrapper .v-widget + .v-widget {
+	margin-left: 0;
+	margin-top: 9.25px;
+}
+
+.mytheme .my-app-shell .my-form-template[width-range~="-700px"] .input-group {
+	margin-bottom: 18.5px;
+}
+
+.mytheme .my-app-shell .my-form-template[width-range~="-700px"] .v-captiontext {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	width: 100%;
+}
+
+.mytheme .my-app-shell .my-form-template[width-range~="-700px"] .my-label-notifications-red {
+	text-align: center;
+}
+
+.mytheme .my-app-shell .my-form-template[width-range~="-700px"] .width-static {
+	width: 16%;
+}
+
+.mytheme .my-app-shell .my-form-template[width-range~="-700px"] .width-dynamic {
+	width: 84%;
+}
+
+.mytheme .my-app-shell .my-form-template[width-range~="-700px"] .my-width-static {
+	width: 16%;
+}
+
+.mytheme .my-app-shell .my-form-template[width-range~="-700px"] .my-width-dynamic {
+	width: 84%;
+}
+
+.mytheme .my-app-shell .my-form-template[width-range~="701px-850px"] .input-wrapper {
+	width: 50%;
+}
+
+.mytheme .my-app-shell .my-form-template[width-range~="701px-850px"] .css-input-wrapper {
+	width: 50%;
+}
+
+.mytheme .my-app-shell .my-form-template[width-range~="701px-850px"] .width-static {
+	width: 14%;
+}
+
+.mytheme .my-app-shell .my-form-template[width-range~="701px-850px"] .width-dynamic {
+	width: 86%;
+}
+
+.mytheme .my-app-shell .my-form-template[width-range~="701px-850px"] .my-width-static {
+	width: 50px;
+}
+
+.mytheme .my-app-shell .my-form-template[width-range~="701px-850px"] .my-width-dynamic {
+	width: -1px;
+}
+
+.mytheme .my-app-shell .my-form-template[width-range~="851px-1000px"] .input-wrapper {
+	width: 30%;
+}
+
+.mytheme .my-app-shell .my-form-template[width-range~="851px-1000px"] .css-input-wrapper {
+	width: 30%;
+}
+
+.mytheme .my-app-shell .my-form-template[width-range~="851px-1000px"] .my-input-wrapper {
+	width: 40%;
+}
+
+.mytheme .my-app-shell .my-form-template[width-range~="851px-1000px"] .my-css-input-wrapper {
+	width: 40%;
+}
+
+.mytheme .my-app-shell .my-form-template[width-range~="851px-1000px"] .width-static {
+	width: 14%;
+}
+
+.mytheme .my-app-shell .my-form-template[width-range~="851px-1000px"] .width-dynamic {
+	width: 86%;
+}
+
+.mytheme .my-app-shell .my-form-template[width-range~="851px-1000px"] .my-width-static {
+	width: 50px;
+}
+
+.mytheme .my-app-shell .my-form-template[width-range~="851px-1000px"] .my-width-dynamic {
+	width: -1px;
+}
+
+.mytheme .my-app-shell .my-form-template[width-range~="1001px-"] .input-wrapper {
+	width: 25%;
+}
+
+.mytheme .my-app-shell .my-form-template[width-range~="1001px-"] .css-input-wrapper {
+	width: 25%;
+}
+
+.mytheme .my-app-shell .my-form-template[width-range~="1001px-"] .my-input-wrapper {
+	width: 35%;
+}
+
+.mytheme .my-app-shell .my-form-template[width-range~="1001px-"] .my-css-input-wrapper {
+	width: 35%;
+}
+
+.mytheme .my-app-shell .my-form-template[width-range~="1001px-"] .width-static {
+	width: 12%;
+}
+
+.mytheme .my-app-shell .my-form-template[width-range~="1001px-"] .width-dynamic {
+	width: 88%;
+}
+
+.mytheme .my-app-shell .my-form-template[width-range~="1001px-"] .my-width-static {
+	width: 50px;
+}
+
+.mytheme .my-app-shell .my-form-template[width-range~="1001px-"] .my-width-dynamic {
+	width: -1px;
+}
+
+.mytheme .my-grid-template .top-bar {
+	background: white;
+	color: #197de1;
+	padding: 0 18.5px;
+	border-bottom: 1px solid #c5c5c5;
+}
+
+.mytheme .my-grid-template .title {
+	font-size: 19.2px;
+	font-weight: 600;
+	padding-bottom: 3.7px;
+}
+
+.mytheme .my-grid-template .sub-title {
+	font-size: 16px;
+	font-weight: 600;
+	padding-bottom: 3.7px;
+}
+
+.mytheme .my-grid-template .padding {
+	padding: 18.5px;
+}
+
+.mytheme .my-grid-template .border {
+	border: 1px solid #c5c5c5;
+}
+
+.mytheme .my-grid-template .border-top {
+	border-top: 1px solid #c5c5c5;
+}
+
+.mytheme .my-grid-template .border-left {
+	border-left: 1px solid #c5c5c5;
+}
+
+.mytheme .my-grid-template .filters {
+	padding: 9.25px;
+}
+
+.mytheme .my-grid-template .filters .v-slot {
+	position: relative;
+}
+
+.mytheme .my-grid-template .content {
+	position: relative;
+}
+
+.mytheme .my-grid-template .list {
+	padding-right: 300px;
+}
+
+.mytheme .my-grid-template .inspect {
+	position: absolute;
+	right: 0;
+	top: 0;
+	background: #ededed;
+	width: 300px !important;
+	border-left: 4px solid #e0e0e0;
+}
+
+.mytheme .my-grid-template .section {
+	padding: 9.25px;
+}
+
+.mytheme .my-grid-template .edit {
+	padding: 9.25px;
+	overflow-x: hidden;
+	overflow-y: auto;
+	border-left: 1px solid #d4d4d4;
+	border-top: 1px solid #d4d4d4;
+}
+
+.mytheme .my-grid-template .search {
+	background: transparent;
+	border: none;
+	box-shadow: none;
+	border-bottom: 2px solid #197de1;
+	border-radius: 0;
+	max-width: 350px;
+}
+
+.mytheme .my-grid-template .buttons {
+	background: #fafafa;
+	padding: 9.25px;
+	border-left: 1px solid #d4d4d4;
+}
+
+.mytheme .my-grid-template[width-range~="-850px"] .list {
+	height: 50% !important;
+	padding-right: 0;
+}
+
+.mytheme .my-grid-template[width-range~="-850px"] .inspect {
+	position: static;
+	height: 50% !important;
+	width: 100% !important;
+	border-top: 4px solid #e0e0e0;
+	border-left: none;
+}
+
+.mytheme .my-grid-template[width-range~="-850px"] .section, .mytheme .my-grid-template[width-range~="-850px"] .edit {
+	padding: 4.625px;
+}
+
+.mytheme .my-grid-template[width-range~="-850px"] .half {
+	width: 50% !important;
+	float: left;
+}
+
+.mytheme .my-grid-template[width-range~="-650px"] .half {
+	width: 100% !important;
+}
+
+.mytheme .my-form-template {
+	overflow-x: hidden;
+	overflow-y: scroll;
+	padding: 18.5px;
+	min-width: 320px;
+}
+
+.mytheme .my-form-template .title {
+	font-size: 19.2px;
+	font-weight: 600;
+	padding-bottom: 18.5px;
+}
+
+.mytheme .my-form-template .v-caption-form-section {
+	text-transform: uppercase;
+	font-size: 12.8px;
+	color: #797979;
+	font-weight: 600;
+	padding-bottom: 0;
+	width: 100%;
+}
+
+.mytheme .my-form-template .input-wrapper {
+	padding: 9.25px;
+	line-height: 37px;
+}
+
+.mytheme .my-form-template .css-input-wrapper {
+	padding: 9.25px;
+	line-height: 37px;
+}
+
+.mytheme .my-form-template .input-group {
+	width: 100%;
+}
+
+.mytheme .my-form-template .text-wrapper {
+	padding: 18.5px;
+	background: white;
+}
+
+.mytheme .my-form-template .form-section {
+	padding: 9.25px 0 37px;
+	width: 100%;
+	border-top: 1px solid #c5c5c5;
+}
+
+.mytheme .my-form-template .input-wrapper .v-caption {
+	display: block;
+}
+
+.mytheme .my-form-template .css-input-wrapper .v-caption {
+	display: block;
+}
+
+.mytheme .my-form-template .v-button.borderless {
+	color: #197de1;
+}
+
+.mytheme .my-form-template .input-wrapper .v-widget + .v-widget {
+	margin-left: 18.5px;
+}
+
+.mytheme .my-form-template .align-bottom {
+	vertical-align: bottom;
+}
+
+.mytheme .my-form-template .border {
+	border: 1px solid #dfdfdf;
+	margin: 9.25px 0;
+}
+
+.mytheme .my-form-template[width-range~="-550px"] .input-wrapper {
+	width: 100%;
+}
+
+.mytheme .my-form-template[width-range~="-550px"] .css-input-wrapper {
+	width: 100%;
+}
+
+.mytheme .my-form-template[width-range~="551px-"] .caption-left .input-wrapper .v-caption {
+	display: inline-block;
+	height: 37px;
+	line-height: 37px;
+	padding-right: 6.16667px;
+	padding-bottom: 0;
+	vertical-align: top;
+}
+
+.mytheme .my-form-template[width-range~="551px-"] .caption-left .input-wrapper .v-caption.v-caption-tiny {
+	height: 28px;
+	line-height: 28px;
+}
+
+.mytheme .my-form-template[width-range~="551px-"] .caption-left .css-input-wrapper .v-caption.v-caption-tiny {
+	height: 28px;
+	line-height: 28px;
+}
+
+.mytheme .my-form-template[width-range~="551px-"] .caption-left .input-wrapper .v-caption.v-caption-small {
+	height: 31px;
+	line-height: 31px;
+}
+
+.mytheme .my-form-template[width-range~="551px-"] .caption-left .css-input-wrapper .v-caption.v-caption-small {
+	height: 31px;
+	line-height: 31px;
+}
+
+.mytheme .my-form-template[width-range~="551px-"] .caption-left .input-wrapper .v-caption.v-caption-large {
+	height: 44px;
+	line-height: 44px;
+}
+
+.mytheme .my-form-template[width-range~="551px-"] .caption-left .css-input-wrapper .v-caption.v-caption-large {
+	height: 44px;
+	line-height: 44px;
+}
+
+.mytheme .my-form-template[width-range~="551px-"] .caption-left .input-wrapper .v-caption.v-caption-huge {
+	height: 59px;
+	line-height: 59px;
+}
+
+.mytheme .my-form-template[width-range~="551px-"] .caption-left .css-input-wrapper .v-caption.v-caption-huge {
+	height: 59px;
+	line-height: 59px;
+}
+
+.mytheme .my-form-template[width-range~="551px-700px"] .input-wrapper {
+	width: 50%;
+}
+
+.mytheme .my-form-template[width-range~="551px-700px"] .css-input-wrapper {
+	width: 50%;
+}
+
+.mytheme .my-form-template[width-range~="551px-700px"] .caption-left .input-wrapper {
+	width: 100%;
+}
+
+.mytheme .my-form-template[width-range~="551px-700px"] .caption-left .input-wrapper  > .v-widget {
+	width: 65% !important;
+	float: right;
+}
+
+.mytheme .my-form-template[width-range~="551px-700px"] .caption-left .input-wrapper  > .v-caption {
+	text-align: right;
+	width: 35%;
+	box-sizing: border-box;
+}
+
+.mytheme .my-form-template[width-range~="551px-700px"] .caption-left .css-input-wrapper {
+	width: 100%;
+}
+
+.mytheme .my-form-template[width-range~="551px-700px"] .caption-left .css-input-wrapper  > .v-widget {
+	width: 65% !important;
+	float: right;
+}
+
+.mytheme .my-form-template[width-range~="551px-700px"] .caption-left .css-input-wrapper  > .v-caption {
+	text-align: right;
+	width: 35%;
+	box-sizing: border-box;
+}
+
+.mytheme .my-form-template[width-range~="-700px"] .title, .mytheme .my-form-template[width-range~="-700px"] .v-caption-form-section {
+	text-align: center;
+}
+
+.mytheme .my-form-template[width-range~="-700px"] .input-wrapper .v-datefield, .mytheme .my-form-template[width-range~="-700px"] .v-textfield, .mytheme .my-form-template[width-range~="-700px"] .v-filterselect, .mytheme .my-form-template[width-range~="-700px"] .v-textarea {
+	width: 100%;
+}
+
+.mytheme .my-form-template[width-range~="-700px"] .css-input-wrapper .v-datefield, .mytheme .my-form-template[width-range~="-700px"] .v-textfield, .mytheme .my-form-template[width-range~="-700px"] .v-filterselect, .mytheme .my-form-template[width-range~="-700px"] .v-textarea {
+	width: 100%;
+}
+
+.mytheme .my-form-template[width-range~="-700px"] .input-wrapper .v-widget + .v-widget {
+	margin-left: 0;
+	margin-top: 9.25px;
+}
+
+.mytheme .my-form-template[width-range~="-700px"] .input-group {
+	margin-bottom: 18.5px;
+}
+
+.mytheme .my-form-template[width-range~="-700px"] .v-captiontext {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	width: 100%;
+}
+
+.mytheme .my-form-template[width-range~="-700px"] .my-label-notifications-red {
+	text-align: center;
+}
+
+.mytheme .my-form-template[width-range~="-700px"] .width-static {
+	width: 16%;
+}
+
+.mytheme .my-form-template[width-range~="-700px"] .width-dynamic {
+	width: 84%;
+}
+
+.mytheme .my-form-template[width-range~="-700px"] .my-width-static {
+	width: 16%;
+}
+
+.mytheme .my-form-template[width-range~="-700px"] .my-width-dynamic {
+	width: 84%;
+}
+
+.mytheme .my-form-template[width-range~="701px-850px"] .input-wrapper {
+	width: 50%;
+}
+
+.mytheme .my-form-template[width-range~="701px-850px"] .css-input-wrapper {
+	width: 50%;
+}
+
+.mytheme .my-form-template[width-range~="701px-850px"] .width-static {
+	width: 14%;
+}
+
+.mytheme .my-form-template[width-range~="701px-850px"] .width-dynamic {
+	width: 86%;
+}
+
+.mytheme .my-form-template[width-range~="701px-850px"] .my-width-static {
+	width: 50px;
+}
+
+.mytheme .my-form-template[width-range~="701px-850px"] .my-width-dynamic {
+	width: -1px;
+}
+
+.mytheme .my-form-template[width-range~="851px-1000px"] .input-wrapper {
+	width: 30%;
+}
+
+.mytheme .my-form-template[width-range~="851px-1000px"] .css-input-wrapper {
+	width: 30%;
+}
+
+.mytheme .my-form-template[width-range~="851px-1000px"] .my-input-wrapper {
+	width: 40%;
+}
+
+.mytheme .my-form-template[width-range~="851px-1000px"] .my-css-input-wrapper {
+	width: 40%;
+}
+
+.mytheme .my-form-template[width-range~="851px-1000px"] .width-static {
+	width: 14%;
+}
+
+.mytheme .my-form-template[width-range~="851px-1000px"] .width-dynamic {
+	width: 86%;
+}
+
+.mytheme .my-form-template[width-range~="851px-1000px"] .my-width-static {
+	width: 50px;
+}
+
+.mytheme .my-form-template[width-range~="851px-1000px"] .my-width-dynamic {
+	width: -1px;
+}
+
+.mytheme .my-form-template[width-range~="1001px-"] .input-wrapper {
+	width: 25%;
+}
+
+.mytheme .my-form-template[width-range~="1001px-"] .css-input-wrapper {
+	width: 25%;
+}
+
+.mytheme .my-form-template[width-range~="1001px-"] .my-input-wrapper {
+	width: 35%;
+}
+
+.mytheme .my-form-template[width-range~="1001px-"] .my-css-input-wrapper {
+	width: 35%;
+}
+
+.mytheme .my-form-template[width-range~="1001px-"] .width-static {
+	width: 12%;
+}
+
+.mytheme .my-form-template[width-range~="1001px-"] .width-dynamic {
+	width: 88%;
+}
+
+.mytheme .my-form-template[width-range~="1001px-"] .my-width-static {
+	width: 50px;
+}
+
+.mytheme .my-form-template[width-range~="1001px-"] .my-width-dynamic {
+	width: -1px;
 }

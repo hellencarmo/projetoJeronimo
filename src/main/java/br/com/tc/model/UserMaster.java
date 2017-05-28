@@ -1,21 +1,15 @@
 package br.com.tc.model;
 
 import javax.persistence.Column;
-import javax.persistence.JoinColumn;
 import javax.persistence.MappedSuperclass;
-import javax.persistence.OneToOne;
 import java.util.Date;
 
 /**
  * @author Jeronimo
- * @since 25/05/2017
+ * @since 28/05/2017
  */
 @MappedSuperclass
-public abstract class Master extends GenericModel {
-	
-	@OneToOne
-	@JoinColumn(name = "id_usuario")
-	private Usuario usuario;
+public abstract class UserMaster extends GenericModel {
 	
 	@Column(nullable = false)
 	private Date inserted;
@@ -25,31 +19,13 @@ public abstract class Master extends GenericModel {
 	
 	/**
 	 * @author Jeronimo
-	 * @since 25/05/2017
+	 * @since 28/05/2017
 	 */
-	public Master() {}
+	public UserMaster() {}
 	
 	/**
 	 * @author Jeronimo
 	 * @since 28/05/2017
-	 * @return usuario
-	 */
-	public Usuario getUsuario() {
-		return usuario;
-	}
-	
-	/**
-	 * @author Jeronimo
-	 * @since 28/05/2017
-	 * @param usuario
-	 */
-	public void setUsuario(Usuario usuario) {
-		this.usuario = usuario;
-	}
-	
-	/**
-	 * @author Jeronimo
-	 * @since 25/05/2017
 	 * @return inserted
 	 */
 	public Date getInserted() {
@@ -58,7 +34,7 @@ public abstract class Master extends GenericModel {
 	
 	/**
 	 * @author Jeronimo
-	 * @since 25/05/2017
+	 * @since 28/05/2017
 	 * @param inserted
 	 */
 	public void setInserted(Date inserted) {
@@ -67,7 +43,7 @@ public abstract class Master extends GenericModel {
 	
 	/**
 	 * @author Jeronimo
-	 * @since 25/05/2017
+	 * @since 28/05/2017
 	 * @return changed
 	 */
 	public Date getChanged() {
@@ -76,7 +52,7 @@ public abstract class Master extends GenericModel {
 	
 	/**
 	 * @author Jeronimo
-	 * @since 25/05/2017
+	 * @since 28/05/2017
 	 * @param changed
 	 */
 	public void setChanged(Date changed) {

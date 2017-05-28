@@ -10,7 +10,7 @@ import javax.persistence.Id;
  * @since 25/05/2017
  */
 @Entity
-public class Usuario extends Master {
+public class Usuario extends UserMaster {
 	
 	@Id
 	@GeneratedValue

@@ -24,11 +24,13 @@ import com.vaadin.ui.Label;
 public abstract class MenuView extends HorizontalLayout {
 	protected Button menuButton;
 	protected CssLayout menu;
-	protected Button dashboard;
-	protected Button reports;
-	protected Button customize;
+	protected Button cliente;
+	protected Button contrato;
+	protected Button financeira;
+	protected Button caixa;
+	protected Button relatorio;
 	protected Button admin;
-	protected Label viewTitle;
+	protected Label title;
 	protected CssLayout content;
 	
 	/**
