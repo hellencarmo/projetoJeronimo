@@ -43,10 +43,10 @@
      </vaadin-label>
      <vaadin-css-layout style-name="edit" size-full :expand>
       <vaadin-css-layout style-name="section half" width-full>
-       <vaadin-text-field caption-as-html required-indicator-visible caption="Nome do Usuário" style-name="small" width-full _id="nome_usuario"></vaadin-text-field>
+       <vaadin-text-field caption-as-html required-indicator-visible caption="Nome do Usuário" style-name="small" width-full maxlength="50" _id="nome_usuario"></vaadin-text-field>
       </vaadin-css-layout>
       <vaadin-css-layout caption-as-html style-name="section half" width-full>
-       <vaadin-password-field caption-as-html caption="Senha" style-name="small" width-full _id="senha"></vaadin-password-field>
+       <vaadin-password-field caption-as-html caption="Senha" style-name="small" width-full maxlength="50" _id="senha"></vaadin-password-field>
       </vaadin-css-layout>
       <vaadin-css-layout caption-as-html style-name="section half" width-full>
        <vaadin-check-box caption="Cliente visualizar" _id="cliente_visualizar"></vaadin-check-box>
@@ -101,6 +101,9 @@
      </vaadin-horizontal-layout>
     </vaadin-vertical-layout>
    </vaadin-css-layout>
+   <vaadin-label style-name="my-label-red" plain-text :middle :center>
+     *Campos obrigatórios 
+   </vaadin-label>
   </vaadin-vertical-layout>
  </body>
 </html>

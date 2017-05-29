@@ -2,6 +2,8 @@ package br.com.tc.model;
 
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import java.util.Date;
 
 /**
@@ -11,17 +13,29 @@ import java.util.Date;
 @MappedSuperclass
 public abstract class UserMaster extends GenericModel {
 	
+	@Temporal(TemporalType.DATE)
 	@Column(nullable = false)
-	private Date inserted;
+	protected Date inserted;
 	
+	@Temporal(TemporalType.DATE)
 	@Column(nullable = false)
-	private Date changed;
+	protected Date changed;
 	
 	/**
 	 * @author Jeronimo
 	 * @since 28/05/2017
 	 */
 	public UserMaster() {}
+	
+	/**
+	 * @author Jeronimo
+	 * @since 28/05/2017
+	 * @throws Exception
+	 */
+	public void setDefault() throws Exception {
+		notNullSuper("inserted", inserted, new Date());
+		setChanged(new Date());
+	}
 	
 	/**
 	 * @author Jeronimo
@@ -57,5 +71,21 @@ public abstract class UserMaster extends GenericModel {
 	 */
 	public void setChanged(Date changed) {
 		this.changed = changed;
+	}
+	
+	/**
+	 * @author Jeronimo
+	 * @since 28/05/2017
+	 * @return v value
+	 */
+	public abstract <V extends Object>V id();
+	
+	/**
+	 * @author Jeronimo
+	 * @since 28/05/2017
+	 * @return isPersisted
+	 */
+	public boolean isPersisted() {
+		return id() != null;
 	}
 }

@@ -18,10 +18,10 @@ public abstract class MasterControl<M extends Object> {
 	 * @since 28/05/2017
 	 */
 	public MasterControl() {
-		String p = getClass().getPackage().getName().replace("Control", "dao");
-		String c = getClass().getSimpleName().replace("Manter", "");
+		String p = getClass().getPackage().getName().replace("control", "dao");
+		String c = getClass().getSimpleName().replace("Manter", ".");
 		try {
-			dao = (MasterDAO<M>) Class.forName(p + c).newInstance();
+			dao = (MasterDAO<M>) Class.forName(p + c + "DAO").newInstance();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -57,18 +57,20 @@ public abstract class MasterControl<M extends Object> {
 	 * @author Jeronimo
 	 * @since 28/05/2017
 	 * @param m model
+	 * @return isOK
 	 */
-	public void persist(M m) {
+	public Boolean persist(M m) throws Exception {
 		setM(m);
-		persist();
+		return persist();
 	}
 	
 	/**
 	 * @author Jeronimo
 	 * @since 28/05/2017
+	 * @return isOK
 	 */
-	public void persist() {
-		dao.persist();
+	public Boolean persist() throws Exception {
+		return dao.persist();
 	}
 	
 	/**
@@ -77,7 +79,7 @@ public abstract class MasterControl<M extends Object> {
 	 * @param m model
 	 * @return m model
 	 */
-	public M find(M m) {
+	public M find(M m) throws Exception {
 		setM(m);
 		return find();
 	}
@@ -87,8 +89,28 @@ public abstract class MasterControl<M extends Object> {
 	 * @since 28/05/2017
 	 * @return m model
 	 */
-	public M find() {
+	public M find() throws Exception {
 		return dao.find();
+	}
+	
+	/**
+	 * @author Jeronimo
+	 * @since 29/05/2017
+	 * @param m object
+	 * @return isOK
+	 */
+	public Boolean delete(M m) throws Exception {
+		this.m = m;
+		return delete();
+	}
+	
+	/**
+	 * @author Jeronimo
+	 * @since 29/05/2017
+	 * @return isOK
+	 */
+	public Boolean delete() throws Exception {
+		return dao.delete();
 	}
 	
 	/**
@@ -97,7 +119,7 @@ public abstract class MasterControl<M extends Object> {
 	 * @param m model
 	 * @return list
 	 */
-	public List<M> list(M m) {
+	public List<M> list(M m) throws Exception {
 		setM(m);
 		return list();
 	}
@@ -107,7 +129,7 @@ public abstract class MasterControl<M extends Object> {
 	 * @since 28/05/2017
 	 * @return list
 	 */
-	public List<M> list() {
+	public List<M> list() throws Exception {
 		return dao.list();
 	}
 }

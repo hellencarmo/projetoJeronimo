@@ -1,9 +1,6 @@
 package br.com.tc.model;
 
-import javax.persistence.Column;
-import javax.persistence.JoinColumn;
-import javax.persistence.MappedSuperclass;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import java.util.Date;
 
 /**
@@ -15,19 +12,31 @@ public abstract class Master extends GenericModel {
 	
 	@OneToOne
 	@JoinColumn(name = "id_usuario")
-	private Usuario usuario;
+	protected Usuario usuario;
 	
+	@Temporal(TemporalType.DATE)
 	@Column(nullable = false)
-	private Date inserted;
+	protected Date inserted;
 	
+	@Temporal(TemporalType.DATE)
 	@Column(nullable = false)
-	private Date changed;
+	protected Date changed;
 	
 	/**
 	 * @author Jeronimo
 	 * @since 25/05/2017
 	 */
 	public Master() {}
+	
+	/**
+	 * @author Jeronimo
+	 * @since 28/05/2017
+	 * @throws Exception
+	 */
+	public void setDefault() throws Exception {
+		notNullSuper("inserted", inserted, new Date());
+		setChanged(new Date());
+	}
 	
 	/**
 	 * @author Jeronimo
@@ -81,5 +90,21 @@ public abstract class Master extends GenericModel {
 	 */
 	public void setChanged(Date changed) {
 		this.changed = changed;
+	}
+	
+	/**
+	 * @author Jeronimo
+	 * @since 28/05/2017
+	 * @return v value
+	 */
+	public abstract <V extends Object>V id();
+	
+	/**
+	 * @author Jeronimo
+	 * @since 28/05/2017
+	 * @return isPersisted
+	 */
+	public boolean isPersisted() {
+		return id() != null;
 	}
 }

@@ -16,10 +16,10 @@ public class Usuario extends UserMaster {
 	@GeneratedValue
 	private Integer id_usuario;
 	
-	@Column(nullable = false)
+	@Column(nullable = false, length = 50)
 	private String nome_usuario;
 	
-	@Column(nullable = false)
+	@Column(nullable = false, length = 50)
 	private String senha;
 	
 	@Column(nullable = false)
@@ -41,10 +41,13 @@ public class Usuario extends UserMaster {
 	private Boolean contrato_excluir;
 	
 	@Column(nullable = false)
-	private Boolean tabela_visualizar;
+	private Boolean financeira_visualizar;
 	
 	@Column(nullable = false)
-	private Boolean tabela_excluir;
+	private Boolean financeira_gravar;
+	
+	@Column(nullable = false)
+	private Boolean financeira_excluir;
 	
 	@Column(nullable = false)
 	private Boolean caixa_visualizar;
@@ -71,54 +74,37 @@ public class Usuario extends UserMaster {
 	
 	/**
 	 * @author Jeronimo
-	 * @since 25/05/2017
-	 * @param nome_usuario
-	 * @param senha
-	 * @param cliente_visualizar
-	 * @param cliente_gravar
-	 * @param cliente_excluir
-	 * @param contrato_visualizar
-	 * @param contrato_gravar
-	 * @param contrato_excluir
-	 * @param tabela_visualizar
-	 * @param tabela_excluir
-	 * @param caixa_visualizar
-	 * @param caixa_gravar
-	 * @param caixa_excluir
-	 * @param relatorio
-	 * @param comissao
+	 * @since 28/05/2017
+	 * @throws Exception
 	 */
-	public Usuario(String nome_usuario,
-			String senha,
-			Boolean cliente_visualizar,
-			Boolean cliente_gravar,
-			Boolean cliente_excluir,
-			Boolean contrato_visualizar,
-			Boolean contrato_gravar,
-			Boolean contrato_excluir,
-			Boolean tabela_visualizar,
-			Boolean tabela_excluir,
-			Boolean caixa_visualizar,
-			Boolean caixa_gravar,
-			Boolean caixa_excluir,
-			Boolean relatorio,
-			Boolean comissao) {
-		super();
-		this.nome_usuario = nome_usuario;
-		this.senha = senha;
-		this.cliente_visualizar = cliente_visualizar;
-		this.cliente_gravar = cliente_gravar;
-		this.cliente_excluir = cliente_excluir;
-		this.contrato_visualizar = contrato_visualizar;
-		this.contrato_gravar = contrato_gravar;
-		this.contrato_excluir = contrato_excluir;
-		this.tabela_visualizar = tabela_visualizar;
-		this.tabela_excluir = tabela_excluir;
-		this.caixa_visualizar = caixa_visualizar;
-		this.caixa_gravar = caixa_gravar;
-		this.caixa_excluir = caixa_excluir;
-		this.relatorio = relatorio;
-		this.comissao = comissao;
+	@Override
+	public void setDefault() throws Exception {
+		notNull("senha", senha, "1234");
+		notNull("cliente_visualizar", cliente_visualizar, false);
+		notNull("cliente_gravar", cliente_gravar, false);
+		notNull("cliente_excluir", cliente_excluir, false);
+		notNull("contrato_visualizar", contrato_visualizar, false);
+		notNull("contrato_gravar", contrato_gravar, false);
+		notNull("contrato_excluir", contrato_excluir, false);
+		notNull("financeira_visualizar", financeira_visualizar, false);
+		notNull("financeira_gravar", financeira_gravar, false);
+		notNull("financeira_excluir", financeira_excluir, false);
+		notNull("caixa_visualizar", caixa_visualizar, false);
+		notNull("caixa_gravar", caixa_gravar, false);
+		notNull("caixa_excluir", caixa_excluir, false);
+		notNull("relatorio", relatorio, false);
+		notNull("comissao", comissao, false);
+		super.setDefault();
+	}
+	
+	/**
+	 * @return v value
+	 * @author Jeronimo
+	 * @since 28/05/2017
+	 */
+	@Override
+	public <V> V id() {
+		return (V) id_usuario;
 	}
 	
 	/**
@@ -286,37 +272,55 @@ public class Usuario extends UserMaster {
 	/**
 	 * @author Jeronimo
 	 * @since 25/05/2017
-	 * @return tabela_visualizar
+	 * @return financeira_visualizar
 	 */
-	public Boolean getTabela_visualizar() {
-		return tabela_visualizar;
+	public Boolean getFinanceira_visualizar() {
+		return financeira_visualizar;
 	}
 	
 	/**
 	 * @author Jeronimo
 	 * @since 25/05/2017
-	 * @param tabela_visualizar
+	 * @param financeira_visualizar
 	 */
-	public void setTabela_visualizar(Boolean tabela_visualizar) {
-		this.tabela_visualizar = tabela_visualizar;
+	public void setFinanceira_visualizar(Boolean financeira_visualizar) {
+		this.financeira_visualizar = financeira_visualizar;
 	}
 	
 	/**
 	 * @author Jeronimo
 	 * @since 25/05/2017
-	 * @return tabela_excluir
+	 * @return financeira_gravar
 	 */
-	public Boolean getTabela_excluir() {
-		return tabela_excluir;
+	public Boolean getFinanceira_gravar() {
+		return financeira_gravar;
 	}
 	
 	/**
 	 * @author Jeronimo
 	 * @since 25/05/2017
-	 * @param tabela_excluir
+	 * @param financeira_gravar
 	 */
-	public void setTabela_excluir(Boolean tabela_excluir) {
-		this.tabela_excluir = tabela_excluir;
+	public void setFinanceira_gravar(Boolean financeira_gravar) {
+		this.financeira_gravar = financeira_gravar;
+	}
+	
+	/**
+	 * @author Jeronimo
+	 * @since 25/05/2017
+	 * @return financeira_excluir
+	 */
+	public Boolean getFinanceira_excluir() {
+		return financeira_excluir;
+	}
+	
+	/**
+	 * @author Jeronimo
+	 * @since 25/05/2017
+	 * @param financeira_excluir
+	 */
+	public void setFinanceira_excluir(Boolean financeira_excluir) {
+		this.financeira_excluir = financeira_excluir;
 	}
 	
 	/**

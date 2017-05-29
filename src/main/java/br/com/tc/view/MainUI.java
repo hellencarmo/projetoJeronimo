@@ -29,6 +29,8 @@ public class MainUI extends UI {
      */
     @Override
     protected void init(VaadinRequest vaadinRequest) {
+        menu = new Menu(this);
+        setContent(menu);
     }
     
     /**

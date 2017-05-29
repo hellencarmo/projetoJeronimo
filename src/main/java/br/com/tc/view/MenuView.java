@@ -31,8 +31,9 @@ public abstract class MenuView extends HorizontalLayout {
 	protected Button relatorio;
 	protected Button admin;
 	protected Label view_title;
-	protected CssLayout content;
 	protected CssLayout content1;
+	protected CssLayout content2;
+	protected CssLayout content3;
 	
 	/**
 	 * @author Jeronimo

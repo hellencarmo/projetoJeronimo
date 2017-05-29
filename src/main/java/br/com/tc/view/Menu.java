@@ -18,7 +18,7 @@ public class Menu extends MenuView {
 	}
 	
 	public CssLayout content() {
-		return content;
+		return content3;
 	}
 	
 	public void setTitle(String title) {
@@ -35,5 +35,6 @@ public class Menu extends MenuView {
 		content().removeAllComponents();
 		content().addComponent(usuarioGrid);
 		setTitle(admin.getCaption());
+		usuarioGrid.updateList();
 	}
 }
