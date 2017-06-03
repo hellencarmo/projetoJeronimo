@@ -1,16 +1,19 @@
 package br.com.tc.control;
 
 import br.com.tc.dao.MasterDAO;
+import br.com.tc.model.GenericModel;
 
+import java.lang.reflect.ParameterizedType;
 import java.util.List;
 
 /**
  * @author Jeronimo
  * @since 27/05/2017
  */
-public abstract class MasterControl<M extends Object> {
+public abstract class MasterControl<D extends MasterDAO<M>, M extends GenericModel> implements IControl<M> {
 	
-	protected MasterDAO<M> dao;
+	protected Class<D> c;
+	protected D d;
 	protected M m;
 	
 	/**
@@ -18,20 +21,13 @@ public abstract class MasterControl<M extends Object> {
 	 * @since 28/05/2017
 	 */
 	public MasterControl() {
-		String p = getClass().getPackage().getName().replace("control", "dao");
-		String c = getClass().getSimpleName().replace("Manter", ".");
+		c = (Class<D>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[0];
 		try {
-			dao = (MasterDAO<M>) Class.forName(p + c + "DAO").newInstance();
+			d = c.newInstance();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		p = p.replace("dao", "model");
-		try {
-			m = (M) Class.forName(p + c).newInstance();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		setM(m);
+		m = d.getM();
 	}
 	
 	/**
@@ -39,9 +35,10 @@ public abstract class MasterControl<M extends Object> {
 	 * @since 28/05/2017
 	 * @param m model
 	 */
+	@Override
 	public void setM(M m) {
 		this.m = m;
-		dao.setM(m);
+		d.setM(m);
 	}
 	
 	/**
@@ -49,6 +46,7 @@ public abstract class MasterControl<M extends Object> {
 	 * @since 28/05/2017
 	 * @return m model
 	 */
+	@Override
 	public M getM() {
 		return m;
 	}
@@ -58,7 +56,9 @@ public abstract class MasterControl<M extends Object> {
 	 * @since 28/05/2017
 	 * @param m model
 	 * @return isOK
+	 * @throws Exception
 	 */
+	@Override
 	public Boolean persist(M m) throws Exception {
 		setM(m);
 		return persist();
@@ -68,9 +68,11 @@ public abstract class MasterControl<M extends Object> {
 	 * @author Jeronimo
 	 * @since 28/05/2017
 	 * @return isOK
+	 * @throws Exception
 	 */
+	@Override
 	public Boolean persist() throws Exception {
-		return dao.persist();
+		return d.persist();
 	}
 	
 	/**
@@ -78,7 +80,9 @@ public abstract class MasterControl<M extends Object> {
 	 * @since 28/05/2017
 	 * @param m model
 	 * @return m model
+	 * @throws Exception
 	 */
+	@Override
 	public M find(M m) throws Exception {
 		setM(m);
 		return find();
@@ -88,9 +92,11 @@ public abstract class MasterControl<M extends Object> {
 	 * @author Jeronimo
 	 * @since 28/05/2017
 	 * @return m model
+	 * @throws Exception
 	 */
+	@Override
 	public M find() throws Exception {
-		return dao.find();
+		return d.find();
 	}
 	
 	/**
@@ -98,7 +104,9 @@ public abstract class MasterControl<M extends Object> {
 	 * @since 29/05/2017
 	 * @param m object
 	 * @return isOK
+	 * @throws Exception
 	 */
+	@Override
 	public Boolean delete(M m) throws Exception {
 		this.m = m;
 		return delete();
@@ -108,9 +116,11 @@ public abstract class MasterControl<M extends Object> {
 	 * @author Jeronimo
 	 * @since 29/05/2017
 	 * @return isOK
+	 * @throws Exception
 	 */
+	@Override
 	public Boolean delete() throws Exception {
-		return dao.delete();
+		return d.delete();
 	}
 	
 	/**
@@ -118,7 +128,9 @@ public abstract class MasterControl<M extends Object> {
 	 * @since 28/05/2017
 	 * @param m model
 	 * @return list
+	 * @throws Exception
 	 */
+	@Override
 	public List<M> list(M m) throws Exception {
 		setM(m);
 		return list();
@@ -128,8 +140,10 @@ public abstract class MasterControl<M extends Object> {
 	 * @author Jeronimo
 	 * @since 28/05/2017
 	 * @return list
+	 * @throws Exception
 	 */
+	@Override
 	public List<M> list() throws Exception {
-		return dao.list();
+		return d.list();
 	}
 }

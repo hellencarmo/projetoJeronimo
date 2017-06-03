@@ -9,7 +9,7 @@
   <vaadin-vertical-layout style-name="my-grid-template" spacing="false" responsive size-full margin="false">
    <vaadin-horizontal-layout style-name="top-bar" spacing="false" width-full height="50px">
     <vaadin-horizontal-layout spacing="false" width-full :middle :expand>
-     <vaadin-text-field caption-as-html icon="fonticon://Vaadin-Icons/e805" style-name="small inline-icon search" placeholder="Pesquisar" width-full _id="search"></vaadin-text-field>
+     <vaadin-text-field caption-as-html icon="fonticon://Vaadin-Icons/e805" style-name="small inline-icon search" placeholder="Filtro" width-full _id="filter"></vaadin-text-field>
     </vaadin-horizontal-layout>
     <vaadin-button icon="fonticon://Vaadin-Icons/e801" style-name="borderless" _id="add" :middle :right>
       Adicionar 
@@ -46,7 +46,7 @@
        <vaadin-text-field caption-as-html required-indicator-visible caption="Nome do Usuário" style-name="small" width-full maxlength="50" _id="nome_usuario"></vaadin-text-field>
       </vaadin-css-layout>
       <vaadin-css-layout caption-as-html style-name="section half" width-full>
-       <vaadin-password-field caption-as-html caption="Senha" style-name="small" width-full maxlength="50" _id="senha"></vaadin-password-field>
+       <vaadin-check-box caption="Senha padão (1234)" _id="senha_padrao"></vaadin-check-box>
       </vaadin-css-layout>
       <vaadin-css-layout caption-as-html style-name="section half" width-full>
        <vaadin-check-box caption="Cliente visualizar" _id="cliente_visualizar"></vaadin-check-box>

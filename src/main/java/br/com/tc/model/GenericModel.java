@@ -106,4 +106,20 @@ public abstract class GenericModel implements Serializable, Cloneable {
 			set(fieldSuper(n), v);
 		}
 	}
+	
+	/**
+	 * @author Jeronimo
+	 * @since 28/05/2017
+	 * @return v value
+	 */
+	public abstract <V extends Object>V id();
+	
+	/**
+	 * @author Jeronimo
+	 * @since 28/05/2017
+	 * @return isPersisted
+	 */
+	public Boolean isPersisted() {
+		return id() != null;
+	}
 }

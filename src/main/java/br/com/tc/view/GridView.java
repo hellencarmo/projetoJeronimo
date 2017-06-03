@@ -1,10 +1,13 @@
 package br.com.tc.view;
 
+import br.com.tc.control.IControl;
+import br.com.tc.model.GenericModel;
+
 /**
  * @author Jeronimo
  * @since 28/05/2017
  */
-public interface GridView<C extends Object, M extends Object> {
+public interface GridView<I extends IControl<M>, M extends GenericModel> {
 	
 	/**
 	 * @author Jeronimo
@@ -22,23 +25,27 @@ public interface GridView<C extends Object, M extends Object> {
 	 * @author Jeronimo
 	 * @since 28/05/2017
 	 */
-	void setCM();
+	void setIM();
 	
 	/**
 	 * @author Jeronimo
 	 * @since 28/05/2017
+	 * @param i icontrol
+	 * @param m model
 	 */
-	void setCM(C c, M m);
+	void setIM(I i, M m);
 	
 	/**
 	 * @author Jeronimo
 	 * @since 28/05/2017
+	 * @param i icontrol
 	 */
-	void setC(C c);
+	void setI(I i);
 	
 	/**
 	 * @author Jeronimo
 	 * @since 28/05/2017
+	 * @param m model
 	 */
 	void setM(M m);
 	

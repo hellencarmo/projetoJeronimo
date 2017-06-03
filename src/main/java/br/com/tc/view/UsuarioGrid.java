@@ -36,7 +36,7 @@ public class UsuarioGrid extends UsuarioGridView implements GridView<ManterUsuar
 	@Override
 	public void setVariables() {
 		binder();
-		setCM();
+		setIM();
 		list();
 		events();
 	}
@@ -56,7 +56,7 @@ public class UsuarioGrid extends UsuarioGridView implements GridView<ManterUsuar
 	 * @since 28/05/2017
 	 */
 	@Override
-	public void setCM() {
+	public void setIM() {
 		manterUsuario = new ManterUsuario();
 		usuario = manterUsuario.getM();
 		setB();
@@ -67,9 +67,11 @@ public class UsuarioGrid extends UsuarioGridView implements GridView<ManterUsuar
 	 * @param usuario
 	 * @author Jeronimo
 	 * @since 28/05/2017
+	 * @param manterUsuario
+	 * @param usuario
 	 */
 	@Override
-	public void setCM(ManterUsuario manterUsuario, Usuario usuario) {
+	public void setIM(ManterUsuario manterUsuario, Usuario usuario) {
 		this.manterUsuario = manterUsuario;
 		this.usuario = usuario;
 		manterUsuario.setM(usuario);
@@ -79,20 +81,25 @@ public class UsuarioGrid extends UsuarioGridView implements GridView<ManterUsuar
 	/**
 	 * @author Jeronimo
 	 * @since 28/05/2017
+	 * @param manterUsuario
 	 */
 	@Override
-	public void setC(ManterUsuario manterUsuario) {
+	public void setI(ManterUsuario manterUsuario) {
 		this.manterUsuario = manterUsuario;
 	}
 	
 	/**
 	 * @author Jeronimo
 	 * @since 28/05/2017
+	 * @param usuario
 	 */
 	@Override
 	public void setM(Usuario usuario) {
 		this.usuario = usuario;
 		manterUsuario.setM(usuario);
+		senha_padrao.setReadOnly(false);
+		senha_padrao.clear();
+		senha_padrao.setReadOnly(!usuario.isPersisted());
 		setB();
 	}
 	
@@ -103,7 +110,6 @@ public class UsuarioGrid extends UsuarioGridView implements GridView<ManterUsuar
 	@Override
 	public void setB() {
 		binder.forField(nome_usuario).asRequired(Messages.required).bind("nome_usuario");
-		binder.forField(senha).bind("senha");
 		binder.setBean(usuario);
 		if (usuario.isPersisted()) {
 			action_title.setValue("Atualizar");
@@ -136,7 +142,7 @@ public class UsuarioGrid extends UsuarioGridView implements GridView<ManterUsuar
 	 */
 	@Override
 	public void updateList() {
-		search.clear();
+		filter.clear();
 		list.setItems(mList);
 		list.sort("id_usuario");
 	}
@@ -236,7 +242,7 @@ public class UsuarioGrid extends UsuarioGridView implements GridView<ManterUsuar
 			}
 			caixa_visualizar.setReadOnly(e.getValue() || caixa_gravar.getValue());
 		});
-		search.addValueChangeListener(e -> {
+		filter.addValueChangeListener(e -> {
 			updateList(e.getValue());
 		});
 	}
@@ -248,6 +254,7 @@ public class UsuarioGrid extends UsuarioGridView implements GridView<ManterUsuar
 	@Override
 	public void add() {
 		setM(new Usuario());
+		list.deselectAll();
 		nome_usuario.focus();
 	}
 	
@@ -261,6 +268,9 @@ public class UsuarioGrid extends UsuarioGridView implements GridView<ManterUsuar
 		if (binder.validate().isOk()) {
 			try {
 				usuario.setDefault();
+				if (senha_padrao.getValue()) {
+					usuario.setSenha("1234");
+				}
 				if (manterUsuario.persist()) {
 					if (isPersisted) {
 						Messages.updateSucess();

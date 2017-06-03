@@ -1,5 +1,6 @@
 package br.com.tc.dao;
 
+import br.com.tc.model.GenericModel;
 import org.hibernate.Session;
 
 import java.lang.reflect.ParameterizedType;
@@ -10,7 +11,7 @@ import java.util.List;
  * @author Jeronimo
  * @since 25/05/2017
  */
-public abstract class MasterDAO<M extends Object> {
+public abstract class MasterDAO<M extends GenericModel> {
 	
 	protected Class<M> c;
 	protected Session s;
@@ -22,6 +23,11 @@ public abstract class MasterDAO<M extends Object> {
 	 */
 	public MasterDAO() {
 		c = (Class<M>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[0];
+		try {
+			m = c.newInstance();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		create();
 	}
 	
