@@ -23,6 +23,7 @@ public class UsuarioGrid extends UsuarioGridView implements GridView<ManterUsuar
 	private Binder<Usuario> binder;
 	private List<Usuario> mList;
 	private List<Usuario> upList;
+	private Confirmation<ManterUsuario, Usuario> confirmationDelete;
 	
 	public UsuarioGrid(MainUI mainUI) {
 		this.mainUI = mainUI;
@@ -39,6 +40,12 @@ public class UsuarioGrid extends UsuarioGridView implements GridView<ManterUsuar
 		setIM();
 		list();
 		events();
+		confirmationDelete = new Confirmation<ManterUsuario, Usuario>(
+				mainUI,
+				this,
+				true,
+				"Deseja excluir este usuário?"
+		);
 	}
 	
 	/**
@@ -179,6 +186,7 @@ public class UsuarioGrid extends UsuarioGridView implements GridView<ManterUsuar
 	 */
 	@Override
 	public void events() {
+		add.setClickShortcut(ShortcutAction.KeyCode.F1);
 		add.addClickListener(e -> {
 			add();
 		});
@@ -186,8 +194,9 @@ public class UsuarioGrid extends UsuarioGridView implements GridView<ManterUsuar
 		save.addClickListener(e -> {
 			saveOrUpdate();
 		});
+		delete.setClickShortcut(ShortcutAction.KeyCode.F2);
 		delete.addClickListener(e -> {
-			delete();
+			confirmationDelete.show();
 		});
 		list.asSingleSelect().addValueChangeListener(e -> {
 			if (e.getValue() != null) {
@@ -279,6 +288,7 @@ public class UsuarioGrid extends UsuarioGridView implements GridView<ManterUsuar
 						mList.add(usuario);
 					}
 					updateList();
+					setM(new Usuario());
 				} else {
 					if (isPersisted) {
 						Messages.updateError();
@@ -304,12 +314,26 @@ public class UsuarioGrid extends UsuarioGridView implements GridView<ManterUsuar
 					Messages.deleteSucess();
 					mList.remove(usuario);
 					updateList();
+					setM(new Usuario());
 				} else {
 					Messages.deleteError();
 				}
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+		}
+	}
+	
+	/**
+	 * @param confirmation
+	 * @author Jeronimo
+	 * @since 04/06/2017
+	 * @param confirmation
+	 */
+	@Override
+	public void confirmation(Boolean confirmation) {
+		if (confirmation) {
+			delete();
 		}
 	}
 }

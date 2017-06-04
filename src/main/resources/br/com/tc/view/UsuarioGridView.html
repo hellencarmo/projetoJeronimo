@@ -9,9 +9,9 @@
   <vaadin-vertical-layout style-name="my-grid-template" spacing="false" responsive size-full margin="false">
    <vaadin-horizontal-layout style-name="top-bar" spacing="false" width-full height="50px">
     <vaadin-horizontal-layout spacing="false" width-full :middle :expand>
-     <vaadin-text-field caption-as-html icon="fonticon://Vaadin-Icons/e805" style-name="small inline-icon search" placeholder="Filtro" width-full _id="filter"></vaadin-text-field>
+     <vaadin-text-field caption-as-html icon="fonticon://Vaadin-Icons/e805" description="Digite para filtrar" style-name="small inline-icon search" placeholder="Filtro" width-full _id="filter"></vaadin-text-field>
     </vaadin-horizontal-layout>
-    <vaadin-button icon="fonticon://Vaadin-Icons/e801" style-name="borderless" _id="add" :middle :right>
+    <vaadin-button icon="fonticon://Vaadin-Icons/e801" description="Clique aqui ou aperte F1 para adicionar" style-name="borderless" plain-text _id="add" :middle :right>
       Adicionar 
     </vaadin-button>
    </vaadin-horizontal-layout>
@@ -92,10 +92,10 @@
       </vaadin-css-layout>
      </vaadin-css-layout>
      <vaadin-horizontal-layout style-name="buttons border-top" width-full height="50px" :middle :center>
-      <vaadin-button icon="fonticon://FontAwesome/f0c7" style-name="small primary" width="90px" plain-text _id="save" :middle :right>
+      <vaadin-button icon="fonticon://FontAwesome/f0c7" description="Clique aqui ou aperte Enter para salvar" style-name="small primary" width="90px" plain-text _id="save" :middle :right>
         Salvar 
       </vaadin-button>
-      <vaadin-button icon="fonticon://FontAwesome/f00d" style-name="small danger" width="90px" plain-text _id="delete" :middle>
+      <vaadin-button icon="fonticon://FontAwesome/f00d" description="Clique aqui ou aperte F2 para apagar" style-name="small danger" width="90px" plain-text _id="delete" :middle>
         Apagar 
       </vaadin-button>
      </vaadin-horizontal-layout>

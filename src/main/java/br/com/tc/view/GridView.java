@@ -97,4 +97,11 @@ public interface GridView<I extends IControl<M>, M extends GenericModel> {
 	 * @since 29/05/2017
 	 */
 	void delete();
+	
+	/**
+	 * @author Jeronimo
+	 * @since 04/06/2017
+	 * @param confirmation
+	 */
+	void confirmation(Boolean confirmation);
 }
